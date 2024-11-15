@@ -1,0 +1,5 @@
+site_name: Sponge's Web
+site_url: https://LaBaFan.github.io
+site_author: Sponge
+theme:
+  name: material
