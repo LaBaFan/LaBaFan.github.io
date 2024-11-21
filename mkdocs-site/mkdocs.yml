@@ -1,36 +1,132 @@
-site_name: Sponge's Web
+site_name: Asteroid
 site_url: https://LaBaFan.github.io
-site_author: Sponge
+site_author: LaBaFan
 
-# 添加 GitHub 仓库链接
 repo_url: https://github.com/LaBaFan/LaBaFan.github.io
-repo_name: LaBaFan/LaBaFan.github.io
+repo_name: LaBaFan/LaBaFan.top
 
 theme:
   name: material
   palette:
-    - scheme: default  # 日间模式
-      primary: teal    # 主色调
-      accent: pink     # 强调色
-      toggle:
-        icon: material/brightness-7
-        name: 切换到深色模式
-    - scheme: slate    # 夜间模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: teal
-      accent: pink
+      accent: indigo
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-night
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
         name: 切换到浅色模式
-  
-  features:
-    - navigation.tabs        # 顶部导航标签
-    - navigation.top        # 返回顶部按钮
-    - search.highlight      # 搜索结果高亮
-    - search.share         # 搜索结果分享
-    
-# 添加导航栏图标
-icon:
-  logo: material/book-open-page-variant
+  custom_dir: overrides
 
-# 添加页脚版权信息
-copyright: Copyright &copy; 2024 Sponge
+  features:
+    - navigation.tabs        # 顶部标签导航
+    - navigation.tabs.sticky # 固定顶部标签
+    - navigation.sections    # 导航分节
+    - navigation.indexes    # 导航索引
+    - content.code.copy     # 代码复制按钮
+    - search.highlight      # 搜索高亮
+    - search.suggest       # 搜索建议
+    - navigation.footer
+    - toc.integrate
+    - navigation.top        # 返回顶部按钮
+    - navigation.footer     # 上一页/下一页导航
+    - search.share         # 搜索结果分享
+    - content.tabs.link    # 标签页同步
+    - content.tooltips     # 工具提示
+    - announce.dismiss     # 可关闭的公告横幅
+
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/library
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/LaBaFan
+      name: GitHub
+
+copyright: Copyright &copy; 2024 LaBaFan
+
+markdown_extensions:
+  # Python Markdown 扩展
+  - abbr                    # 支持缩写
+  - attr_list              # 支持属性列表
+  - def_list               # 支持定义列表
+  - footnotes              # 支持脚注
+  - md_in_html            # 支持在 HTML 中写 Markdown
+  - toc:                   # 目录配置
+      permalink: true      # 显示段落永久链接
+      slugify: !!python/name:pymdownx.slugs.uslugify
+      toc_depth: 3        # 目录深度
+  - tables                 # 表格支持
+  
+  # PyMdown 扩展
+  - pymdownx.arithmatex:   # LaTeX 数学公式支持
+      generic: true
+  - pymdownx.betterem     # 优化强调语法
+  - pymdownx.caret        # 上标支持
+  - pymdownx.mark         # 高亮支持
+  - pymdownx.tilde        # 下标支持
+  - pymdownx.critic       # 编辑标记支持
+  - pymdownx.details      # 可折叠区块支持
+  - pymdownx.emoji:       # emoji 表情支持
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:    # 代码高亮
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true   # 使用 Pygments 进行语法高亮
+  - pymdownx.inlinehilite # 行内代码高亮
+  - pymdownx.keys         # 按键显示支持
+  - pymdownx.smartsymbols # 智能符号支持
+  - pymdownx.superfences:  # 复杂嵌套代码块支持
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:      # 标签页支持
+      alternate_style: true
+  - pymdownx.tasklist:    # 任务列表支持
+      custom_checkbox: true
+  - pymdownx.snippets     # 代码片段复用
+
+# LaTeX 支持
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - home: index.md
+  - 笔记:
+    - 计算机组成原理:
+      - 概述: notes/CO/index.md
+      - Chapter 1 - 计算机系统基础: notes/CO/chapter1.md
+      - Chapter 2 - 指令系统: notes/CO/chapter2.md
+      - Chapter 3 - CPU设计: notes/CO/chapter3.md
+      - Chapter 4 - 控制冒险: notes/CO/chapter4.md
+    - 高级数据结构:
+      - 概述: notes/ADS/index.md
+      - 数据结构:
+        - 红黑树: notes/ADS/red_black_tree.md
+        - B+树: notes/ADS/b_plus_tree.md
+        - 左式堆: notes/ADS/leftist_heap.md
+        - 斜堆: notes/ADS/skew_heap.md
+        - 倒排索引: notes/ADS/inverted_index.md
+        - 二项队列: notes/ADS/binomial_queue.md
+      - 算法设计:
+        - 回溯法: notes/ADS/backtracking.md
+        - 分治法: notes/ADS/divide_and_conquer.md
+        - 动态规划: notes/ADS/dynamic_programming.md
+        - NP完全性: notes/ADS/np_complete.md
+  - 关于: about.md
