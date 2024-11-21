@@ -1,6 +1,11 @@
 site_name: Sponge's Web
 site_url: https://LaBaFan.github.io
 site_author: Sponge
+
+# 添加 GitHub 仓库链接
+repo_url: https://github.com/LaBaFan/LaBaFan.github.io
+repo_name: LaBaFan/LaBaFan.github.io
+
 theme:
   name: material
   palette:
