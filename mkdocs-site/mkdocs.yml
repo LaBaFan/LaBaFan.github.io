@@ -3,3 +3,29 @@ site_url: https://LaBaFan.github.io
 site_author: Sponge
 theme:
   name: material
+  palette:
+    - scheme: default  # 日间模式
+      primary: teal    # 主色调
+      accent: pink     # 强调色
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - scheme: slate    # 夜间模式
+      primary: teal
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+  
+  features:
+    - navigation.tabs        # 顶部导航标签
+    - navigation.top        # 返回顶部按钮
+    - search.highlight      # 搜索结果高亮
+    - search.share         # 搜索结果分享
+    
+# 添加导航栏图标
+icon:
+  logo: material/book-open-page-variant
+
+# 添加页脚版权信息
+copyright: Copyright &copy; 2024 Sponge
