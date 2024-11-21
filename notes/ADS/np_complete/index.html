@@ -10,26 +10,28 @@
         <meta name="author" content="LaBaFan">
       
       
-        <link rel="canonical" href="https://LaBaFan.github.io/">
+        <link rel="canonical" href="https://LaBaFan.github.io/notes/ADS/np_complete/">
       
       
+        <link rel="prev" href="../dynamic_programming/">
       
-        <link rel="next" href="notes/CO/">
+      
+        <link rel="next" href="../../../about/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>Asteroid</title>
+        <title>NP完全性 - Asteroid</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#np完全性" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +94,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Asteroid" class="md-header__button md-logo" aria-label="Asteroid" data-md-component="logo">
+    <a href="../../.." title="Asteroid" class="md-header__button md-logo" aria-label="Asteroid" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              home
+              NP完全性
             
           </span>
         </div>
@@ -218,11 +220,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -237,17 +237,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="notes/CO/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../CO/" class="md-tabs__link">
           
   
     
@@ -268,7 +272,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
     
@@ -310,7 +314,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Asteroid" class="md-nav__button md-logo" aria-label="Asteroid" data-md-component="logo">
+    <a href="../../.." title="Asteroid" class="md-nav__button md-logo" aria-label="Asteroid" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -337,19 +341,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -358,7 +353,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -367,8 +361,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -379,19 +375,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -402,7 +401,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             笔记
@@ -435,10 +434,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -447,7 +449,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="notes/CO/" class="md-nav__link ">
+            <a href="../../CO/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -458,7 +460,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -480,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/CO/chapter1/" class="md-nav__link">
+      <a href="../../CO/chapter1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -501,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/CO/chapter2/" class="md-nav__link">
+      <a href="../../CO/chapter2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -522,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/CO/chapter3/" class="md-nav__link">
+      <a href="../../CO/chapter3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -543,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/CO/chapter4/" class="md-nav__link">
+      <a href="../../CO/chapter4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -569,6 +571,8 @@
                 
   
   
+    
+  
   
   
     
@@ -587,19 +591,22 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="notes/ADS/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -610,13 +617,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             高级数据结构
@@ -686,7 +693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/red_black_tree/" class="md-nav__link">
+      <a href="../red_black_tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -707,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/b_plus_tree/" class="md-nav__link">
+      <a href="../b_plus_tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -728,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/leftist_heap/" class="md-nav__link">
+      <a href="../leftist_heap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -749,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/skew_heap/" class="md-nav__link">
+      <a href="../skew_heap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -770,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/inverted_index/" class="md-nav__link">
+      <a href="../inverted_index/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -791,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/binomial_queue/" class="md-nav__link">
+      <a href="../binomial_queue/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -817,8 +824,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -838,11 +847,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
@@ -856,7 +865,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2_3">
             <span class="md-nav__icon md-icon"></span>
             算法设计
@@ -870,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/backtracking/" class="md-nav__link">
+      <a href="../backtracking/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -891,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/divide_and_conquer/" class="md-nav__link">
+      <a href="../divide_and_conquer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -912,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/dynamic_programming/" class="md-nav__link">
+      <a href="../dynamic_programming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -930,10 +939,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="notes/ADS/np_complete/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    NP完全性
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -942,6 +971,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#基本概念" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本概念
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#常见np完全问题" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见NP完全问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#处理方法" class="md-nav__link">
+    <span class="md-ellipsis">
+      处理方法
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -977,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1009,8 +1085,35 @@
   
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link">&para;</a></h1>
-<p>Welcome to my Web!</p>
+<h1 id="np完全性">NP完全性<a class="headerlink" href="#np完全性" title="Permanent link">&para;</a></h1>
+<h2 id="基本概念">基本概念<a class="headerlink" href="#基本概念" title="Permanent link">&para;</a></h2>
+<ul>
+<li><em>P</em>类问题：可以在多项式时间内解决的问题</li>
+<li><em>NP</em>类问题：可以在多项式时间内验证解的正确性的问题</li>
+<li><em>NP-complete</em>：NP中最难的问题</li>
+<li><em>NP-complete</em>：<ul>
+<li>它本身在<em>NP</em>中,并且所有其他问题都可以在多项式时间内归约到它</li>
+</ul>
+</li>
+<li><em>NP-hard</em>：<ul>
+<li>它不一定在<em>NP</em>中,但所有其他问题都可以在多项式时间内归约到它</li>
+</ul>
+</li>
+</ul>
+<h2 id="常见np完全问题">常见NP完全问题<a class="headerlink" href="#常见np完全问题" title="Permanent link">&para;</a></h2>
+<ol>
+<li>旅行商问题（TSP）</li>
+<li>图的着色问题</li>
+<li>哈密顿回路问题</li>
+<li>子集和问题</li>
+</ol>
+<h2 id="处理方法">处理方法<a class="headerlink" href="#处理方法" title="Permanent link">&para;</a></h2>
+<ol>
+<li>近似算法</li>
+<li>随机算法</li>
+<li>启发式算法</li>
+<li>特殊情况的多项式算法 </li>
+</ol>
 
 
 
@@ -1047,15 +1150,30 @@
       
       <nav class="md-footer__inner md-grid" aria-label="footer.title" >
         
+          
+          <a href="../dynamic_programming/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 动态规划" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                动态规划
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="notes/CO/" class="md-footer__link md-footer__link--next" aria-label="Next: 概述" rel="next">
+          <a href="../../../about/" class="md-footer__link md-footer__link--next" aria-label="Next: 关于" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-                概述
+                关于
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1073,12 +1191,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "content.code.copy", "search.highlight", "search.suggest", "navigation.footer", "toc.integrate", "navigation.top", "navigation.footer", "search.share", "content.tabs.link", "content.tooltips", "announce.dismiss"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "content.code.copy", "search.highlight", "search.suggest", "navigation.footer", "toc.integrate", "navigation.top", "navigation.footer", "search.share", "content.tabs.link", "content.tooltips", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
