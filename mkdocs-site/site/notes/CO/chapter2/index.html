@@ -10,26 +10,28 @@
         <meta name="author" content="LaBaFan">
       
       
-        <link rel="canonical" href="https://LaBaFan.github.io/">
+        <link rel="canonical" href="https://LaBaFan.github.io/notes/CO/chapter2/">
       
       
+        <link rel="prev" href="../chapter1/">
       
-        <link rel="next" href="notes/CO/">
+      
+        <link rel="next" href="../chapter3/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>Asteroid</title>
+        <title>Chapter 2 - 指令系统 - Asteroid</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#risc-v-指令" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +94,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Asteroid" class="md-header__button md-logo" aria-label="Asteroid" data-md-component="logo">
+    <a href="../../.." title="Asteroid" class="md-header__button md-logo" aria-label="Asteroid" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              home
+              Chapter 2 - 指令系统
             
           </span>
         </div>
@@ -218,11 +220,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -237,17 +237,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="notes/CO/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -268,7 +272,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
     
@@ -310,7 +314,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Asteroid" class="md-nav__button md-logo" aria-label="Asteroid" data-md-component="logo">
+    <a href="../../.." title="Asteroid" class="md-nav__button md-logo" aria-label="Asteroid" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -337,19 +341,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -358,7 +353,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -367,8 +361,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -379,19 +375,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -402,7 +401,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             笔记
@@ -413,6 +412,8 @@
                 
   
   
+    
+  
   
   
     
@@ -435,19 +436,22 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="notes/CO/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -458,13 +462,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             计算机组成原理
@@ -480,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/CO/chapter1/" class="md-nav__link">
+      <a href="../chapter1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -498,10 +502,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="notes/CO/chapter2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chapter 2 - 指令系统
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -510,6 +532,120 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#risc-v-指令" class="md-nav__link">
+    <span class="md-ellipsis">
+      RISC-V 指令
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RISC-V 指令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      R-type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      I-type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      S-type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      B-type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#立即数生成_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      立即数生成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#j-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      J-type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      U-type
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -522,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/CO/chapter3/" class="md-nav__link">
+      <a href="../chapter3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -543,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/CO/chapter4/" class="md-nav__link">
+      <a href="../chapter4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -587,10 +723,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -599,7 +738,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="notes/ADS/" class="md-nav__link ">
+            <a href="../../ADS/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -610,7 +749,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -686,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/red_black_tree/" class="md-nav__link">
+      <a href="../../ADS/red_black_tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -707,7 +846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/b_plus_tree/" class="md-nav__link">
+      <a href="../../ADS/b_plus_tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -728,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/leftist_heap/" class="md-nav__link">
+      <a href="../../ADS/leftist_heap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -749,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/skew_heap/" class="md-nav__link">
+      <a href="../../ADS/skew_heap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -770,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/inverted_index/" class="md-nav__link">
+      <a href="../../ADS/inverted_index/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -791,7 +930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/binomial_queue/" class="md-nav__link">
+      <a href="../../ADS/binomial_queue/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -870,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/backtracking/" class="md-nav__link">
+      <a href="../../ADS/backtracking/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -891,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/divide_and_conquer/" class="md-nav__link">
+      <a href="../../ADS/divide_and_conquer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -912,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/dynamic_programming/" class="md-nav__link">
+      <a href="../../ADS/dynamic_programming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -933,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/ADS/np_complete/" class="md-nav__link">
+      <a href="../../ADS/np_complete/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -977,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1009,8 +1148,300 @@
   
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link">&para;</a></h1>
-<p>Welcome to my Web!</p>
+  <h1>Chapter 2 - 指令系统</h1>
+
+<h2 id="risc-v-指令">RISC-V 指令<a class="headerlink" href="#risc-v-指令" title="Permanent link">&para;</a></h2>
+<p>小端:低位放在地址较小处;大端相反</p>
+<h3 id="registers">Registers<a class="headerlink" href="#registers" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Register name</th>
+<th>usage</th>
+<th>preserved on call?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x0</td>
+<td>0</td>
+<td>Constant value 0</td>
+<td></td>
+</tr>
+<tr>
+<td>x1(ra)</td>
+<td>1</td>
+<td>return address(link register)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>x2(sp)</td>
+<td>2</td>
+<td>stack pointer</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>x3(gp)</td>
+<td>3</td>
+<td>global pointer</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>x4(tp)</td>
+<td>4</td>
+<td>thread pointer</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>x5-x7</td>
+<td>5-7</td>
+<td>temporaries</td>
+<td>no</td>
+</tr>
+<tr>
+<td>x8-x9</td>
+<td>8-9</td>
+<td>saved</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>x10-x17</td>
+<td>10-17</td>
+<td>arguments/results</td>
+<td>no</td>
+</tr>
+<tr>
+<td>x18-x27</td>
+<td>18-27</td>
+<td>saved</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>x28-x31</td>
+<td>28-31</td>
+<td>temporaries</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-path">Data Path<a class="headerlink" href="#data-path" title="Permanent link">&para;</a></h3>
+<p><img alt="full_datapath" src="../figure/chapter3/data_path/full_datapath.png" /></p>
+<h3 id="r-type">R-type<a class="headerlink" href="#r-type" title="Permanent link">&para;</a></h3>
+<h4 id="内部结构">内部结构<a class="headerlink" href="#内部结构" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>7bits</th>
+<th>5bits</th>
+<th>5bits</th>
+<th>3bits</th>
+<th>5bits</th>
+<th>7bits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><sup>31</sup>funct7<sup>25</sup></td>
+<td><sup>24</sup>rs2<sup>20</sup></td>
+<td><sup>19</sup>rs1<sup>15</sup></td>
+<td><sup>14</sup>funct3<sup>12</sup></td>
+<td><sup>11</sup>rd<sup>7</sup></td>
+<td><sup>6</sup>opcode<sup>0</sup></td>
+</tr>
+</tbody>
+</table>
+<h4 id="具体指令">具体指令<a class="headerlink" href="#具体指令" title="Permanent link">&para;</a></h4>
+<p>opcode = <code>0110011</code>
+不包含立即数的所有整数计算指令，一般表示寄存器-寄存器操作的指令,如:
+ - add,sub,and,or,nor,sll,srl,sra,slt,sltu
+   - <code>add rd,rs1,rs2</code></p>
+<h4 id="data_path">Data_Path<a class="headerlink" href="#data_path" title="Permanent link">&para;</a></h4>
+<p><img alt="R_type_data_path" src="../figure/chapter3/data_path/R_data_path.png" /></p>
+<h4 id="机器码转换">机器码转换<a class="headerlink" href="#机器码转换" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p><code>add x9,x20,x21 -&gt; 0000000 10101 10100 000 01001 0110011 = 015A04B3</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>7bits</th>
+<th>5bits</th>
+<th>5bits</th>
+<th>3bits</th>
+<th>5bits</th>
+<th>7bits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0000000</td>
+<td>10101(21)</td>
+<td>10100(20)</td>
+<td>000</td>
+<td>01001</td>
+<td>0110011</td>
+</tr>
+</tbody>
+</table>
+<p>由于二进制太长,我们通常用十六进制表示</p>
+<h3 id="i-type">I-type<a class="headerlink" href="#i-type" title="Permanent link">&para;</a></h3>
+<h4 id="内部结构_1">内部结构<a class="headerlink" href="#内部结构_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>12bits</th>
+<th>5bits</th>
+<th>3bits</th>
+<th>5bits</th>
+<th>7bits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><sup>31</sup>immediate[11:0]<sup>20</sup></td>
+<td><sup>19</sup>rs1<sup>15</sup></td>
+<td><sup>14</sup>funct3<sup>12</sup></td>
+<td><sup>11</sup>rd<sup>7</sup></td>
+<td><sup>6</sup>opcode<sup>0</sup></td>
+</tr>
+</tbody>
+</table>
+<h4 id="具体指令_1">具体指令<a class="headerlink" href="#具体指令_1" title="Permanent link">&para;</a></h4>
+<p>opcode = <code>0010011,0000011,1100111</code>
+相当于将 R-typed 指令格式中的一个操作数改为立即数,如:</p>
+<ul>
+<li>算术型(<code>0010011</code>):addi,xori,ori,andi,slli,srli,srai,slti,sltiu</li>
+<li><code>addi rd,rs1,imm</code></li>
+<li>load型(<code>0000011</code>):lb,lh,lv,lbu,lhu</li>
+<li><code>lb rd,imm(rs1)</code>:从内存读8bit数据,内存地址=rs1 + imm,数据写入rd</li>
+<li>store型(<code>1100111</code>):jalr</li>
+<li><code>jalr rd,imm(rs1)</code>:<code>rd</code>存储返回地址(<code>pc + 4</code>),然后跳转到新地址(<code>rs1 + imm</code>)</li>
+</ul>
+<h4 id="立即数生成">立即数生成<a class="headerlink" href="#立即数生成" title="Permanent link">&para;</a></h4>
+<p><code>imm = {{20{inst[31]}},inst[31:20]}</code></p>
+<h4 id="data_path_1">Data_Path<a class="headerlink" href="#data_path_1" title="Permanent link">&para;</a></h4>
+<h5 id="load型">load型<a class="headerlink" href="#load型" title="Permanent link">&para;</a></h5>
+<p><img alt="I_type_data_path" src="../figure/chapter3/data_path/Load_data_path.png" /></p>
+<h3 id="s-type">S-type<a class="headerlink" href="#s-type" title="Permanent link">&para;</a></h3>
+<h4 id="内部结构_2">内部结构<a class="headerlink" href="#内部结构_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>7bits</th>
+<th>5bits</th>
+<th>5bits</th>
+<th>3bits</th>
+<th>5bits</th>
+<th>7bits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><sup>31</sup>immediate[11:0]<sup>25</sup></td>
+<td><sup>24</sup>rs2<sup>20</sup></td>
+<td><sup>19</sup>rs1<sup>15</sup></td>
+<td><sup>14</sup>funct3<sup>12</sup></td>
+<td><sup>11</sup>immediate[4:0]<sup>7</sup></td>
+<td><sup>6</sup>opcode<sup>0</sup></td>
+</tr>
+</tbody>
+</table>
+<h4 id="具体指令_2">具体指令<a class="headerlink" href="#具体指令_2" title="Permanent link">&para;</a></h4>
+<p>opcode = <code>0100011</code>
+一般表示访存store指令,如:
+ - sw(存储字),sh(半字),sb(字节)
+    - <code>sb rs2,imm(rs1)</code>:将rs2低8位写入内存,内存地址 = rs1 + imm</p>
+<h4 id="data_path_2">Data_Path<a class="headerlink" href="#data_path_2" title="Permanent link">&para;</a></h4>
+<p><img alt="S_type_data_path" src="../figure/chapter3/data_path/S_data_path.png" /></p>
+<h4 id="立即数生成_1">立即数生成<a class="headerlink" href="#立即数生成_1" title="Permanent link">&para;</a></h4>
+<p><code>imm = {{20{inst[31]}},inst[32:25],inst[11:7]}</code></p>
+<h3 id="b-type">B-type<a class="headerlink" href="#b-type" title="Permanent link">&para;</a></h3>
+<h4 id="内部结构_3">内部结构<a class="headerlink" href="#内部结构_3" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>7bits</th>
+<th>5bits</th>
+<th>5bits</th>
+<th>3bits</th>
+<th>5bits</th>
+<th>7bits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><sup>31</sup>immediate[12,10:5]<sup>25</sup></td>
+<td><sup>24</sup>rs2<sup>20</sup></td>
+<td><sup>19</sup>rs1<sup>15</sup></td>
+<td><sup>14</sup>funct3<sup>12</sup></td>
+<td><sup>11</sup>immediate[4:1,11]<sup>7</sup></td>
+<td><sup>6</sup>opcode<sup>0</sup></td>
+</tr>
+</tbody>
+</table>
+<h4 id="具体指令_3">具体指令<a class="headerlink" href="#具体指令_3" title="Permanent link">&para;</a></h4>
+<p>opcode = <code>1100011</code>
+一般表示条件跳转指令,如:
+ - beq(相等),bne(不相等),bge(大于等于),bgeu,blt(小于),bltu
+   - <code>beq rs1, rs2, imm</code>:比较rs1和rs2的值,相等则跳转到新地址(imm),不相等则执行下一条指令(pc = pc + 4)</p>
+<h4 id="data_path_3">Data_Path<a class="headerlink" href="#data_path_3" title="Permanent link">&para;</a></h4>
+<p><img alt="B_type_data_path" src="../figure/chapter3/data_path/B_data_path.png" /></p>
+<h3 id="立即数生成_2">立即数生成<a class="headerlink" href="#立即数生成_2" title="Permanent link">&para;</a></h3>
+<p><code>imm = {{19{inst[31]}},inst[31],inst[7],inst[30:25],inst[11:8],1'b0}</code></p>
+<h3 id="j-type">J-type<a class="headerlink" href="#j-type" title="Permanent link">&para;</a></h3>
+<h4 id="内部结构_4">内部结构<a class="headerlink" href="#内部结构_4" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>20bits</th>
+<th>5bits</th>
+<th>7bits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\text{immediate}_{[20,10:1,11,19:12]}^{31..12}\)</span></td>
+<td><span class="arithmatex">\(\text{rd}^{11..7}\)</span></td>
+<td><span class="arithmatex">\(\text{opcode}^{6..0}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h4 id="具体指令_4">具体指令<a class="headerlink" href="#具体指令_4" title="Permanent link">&para;</a></h4>
+<p>opcode = <code>1101111</code></p>
+<p>一般表示无条件跳转指令，如：
+- jal (<code>jal rd,label</code>): 将当前指令的下一条地址 <code>pc + 4</code> 存储到 <code>rd</code>，然后跳转到 <code>label</code></p>
+<h4 id="data_path_4">Data_Path<a class="headerlink" href="#data_path_4" title="Permanent link">&para;</a></h4>
+<p><img alt="J型指令数据通路" src="../figure/chapter3/data_path/J_data_path.png" /></p>
+<h4 id="立即数生成_3">立即数生成<a class="headerlink" href="#立即数生成_3" title="Permanent link">&para;</a></h4>
+<div class="language-verilog highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">imm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mh">11</span><span class="p">{</span><span class="n">inst</span><span class="p">[</span><span class="mh">31</span><span class="p">]}},</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">31</span><span class="p">],</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">19</span><span class="o">:</span><span class="mh">12</span><span class="p">],</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">20</span><span class="p">],</span><span class="w"> </span><span class="n">inst</span><span class="p">[</span><span class="mh">30</span><span class="o">:</span><span class="mh">21</span><span class="p">],</span><span class="w"> </span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="u-type">U-type<a class="headerlink" href="#u-type" title="Permanent link">&para;</a></h3>
+<h4 id="内部结构_5">内部结构<a class="headerlink" href="#内部结构_5" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>20bits</th>
+<th>5bits</th>
+<th>7bits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><sup>31</sup>immediate[31:12]<sup>12</sup></td>
+<td><sup>11</sup>rd<sup>7</sup></td>
+<td><sup>6</sup>opcode<sup>0</sup></td>
+</tr>
+</tbody>
+</table>
+<h4 id="具体指令_5">具体指令<a class="headerlink" href="#具体指令_5" title="Permanent link">&para;</a></h4>
+<p>opcode = <code>0110111,0010111</code>
+一般表示长立即数操作指令,如:
+ - lui(<code>0110111,lui x5, imme[4:0]</code>):将立即数左移12位,并将低12位置0,将结果写回目的寄存器
+ - auipc(<code>0010111,auipc x1,imme[4:0]</code>):将PC高20位加上imme存储到x1</p>
+<h4 id="data_path_5">Data_Path<a class="headerlink" href="#data_path_5" title="Permanent link">&para;</a></h4>
+<h4 id="立即数生成_4">立即数生成<a class="headerlink" href="#立即数生成_4" title="Permanent link">&para;</a></h4>
+<p><code>imm = {inst[31:12],12'b0}</code></p>
 
 
 
@@ -1047,15 +1478,30 @@
       
       <nav class="md-footer__inner md-grid" aria-label="footer.title" >
         
+          
+          <a href="../chapter1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 1 - 计算机系统基础" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                Chapter 1 - 计算机系统基础
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="notes/CO/" class="md-footer__link md-footer__link--next" aria-label="Next: 概述" rel="next">
+          <a href="../chapter3/" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter 3 - CPU设计" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-                概述
+                Chapter 3 - CPU设计
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1073,12 +1519,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "content.code.copy", "search.highlight", "search.suggest", "navigation.footer", "toc.integrate", "navigation.top", "navigation.footer", "search.share", "content.tabs.link", "content.tooltips", "announce.dismiss"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "content.code.copy", "search.highlight", "search.suggest", "navigation.footer", "toc.integrate", "navigation.top", "navigation.footer", "search.share", "content.tabs.link", "content.tooltips", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
