@@ -117,13 +117,15 @@ extra_javascript:
 nav:
   - home: index.md
   - 笔记:
-    - 计算机组成原理:
+    - 计算机组成与设计:
       - 概述: notes/CO/index.md
       - Chapter 1 - 计算机系统基础: notes/CO/chapter1.md
       - Chapter 2 - 指令系统: notes/CO/chapter2.md
-      - Chapter 3 - CPU设计: notes/CO/chapter3.md
-      - Chapter 4 - 控制冒险: notes/CO/chapter4.md
-    - 高级数据结构:
+      - Chapter 3 - 单周期CPU: notes/CO/chapter3.md
+      - Chapter 4 - 流水线: notes/CO/chapter4.md
+      - Chapter 5 - Memory: notes/CO/chapter5.md
+      - Chapter 6 - I/O: notes/CO/chapter6.md
+    - 高级数据结构与算法设计:
       - 概述: notes/ADS/index.md
       - 数据结构:
         - AVL Tree与Splay Tree: notes/ADS/AVL_tree&splay_tree.md
@@ -144,6 +146,11 @@ nav:
         - Randomized Algorithm: notes/ADS/Randomized_Algorithm.md
         - Parallel Algorithm: notes/ADS/Parallel_Algorithm.md
         - External Sort: notes/ADS/External_Sort.md
+    - 普通物理学2:
+      - 麦克斯韦方程组: notes/general_physics_2/Maxwell's_Equations.md
+      - 电磁波与光波: notes/general_physics_2/电磁波与光波.md
+      - 光学: notes/general_physics_2/光学.md
+      - 量子: notes/general_physics_2/量子.md
   - 关于: about.md
 
 plugins:

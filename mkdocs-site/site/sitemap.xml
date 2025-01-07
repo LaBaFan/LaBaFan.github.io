@@ -2,74 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://LaBaFan.github.io/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/about/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/notes/ADS/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://LaBaFan.github.io/notes/ADS/AVL_tree%26splay_tree/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://LaBaFan.github.io/notes/ADS/Approximation/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://LaBaFan.github.io/notes/ADS/External_Sort/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://LaBaFan.github.io/notes/ADS/Greedy/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://LaBaFan.github.io/notes/ADS/Leftist_heap/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://LaBaFan.github.io/notes/ADS/Local_search/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://LaBaFan.github.io/notes/ADS/Parallel_Algorithm/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://LaBaFan.github.io/notes/ADS/Randomized_Algorithm/</loc>
+         <lastmod>2025-01-07</lastmod>
+    </url>
+    <url>
+         <loc>https://LaBaFan.github.io/notes/ADS/Skew_heap/</loc>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/notes/ADS/b_plus_tree/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/notes/ADS/backtracking/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/notes/ADS/binomial_queue/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/notes/ADS/divide_and_conquer/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/notes/ADS/dynamic_programming/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/notes/ADS/inverted_index/</loc>
-         <lastmod>2024-11-21</lastmod>
-    </url>
-    <url>
-         <loc>https://LaBaFan.github.io/notes/ADS/leftist_heap/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/notes/ADS/np_complete/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/notes/ADS/red_black_tree/</loc>
-         <lastmod>2024-11-21</lastmod>
-    </url>
-    <url>
-         <loc>https://LaBaFan.github.io/notes/ADS/skew_heap/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/notes/CO/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/notes/CO/chapter1/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/notes/CO/chapter2/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/notes/CO/chapter3/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
     <url>
          <loc>https://LaBaFan.github.io/notes/CO/chapter4/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2025-01-07</lastmod>
     </url>
 </urlset>
