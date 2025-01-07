@@ -1,23 +1,61 @@
-# 回溯法
+# BackTracking
 
-## 基本思想
-在包含问题的所有解的解空间树中，按照深度优先搜索的策略，从根节点出发深度探索解空间树。
+主要考点:$\alpha ,\beta$剪枝
 
-## 算法框架
-```python
-def backtrack(路径, 选择列表):
-    if 满足结束条件:
-        result.add(路径)
-        return
+## 公路重建问题(turnpike)
+
+给定一组点两两之间的距离,通过这些距离重构出各点的位置.
+
+主要思想:
+
+1. 首先确定点的个数和两个端点之间的位置(可以默认左端点为0,右端点为最大距离)
+2. 然后考察第二大的位置,以此类推
+
+### 伪代码
+
+```c
+bool Reconstruct ( DistType X[ ], DistSet D, int N, int left, int right )
+{ /* X[1]...X[left-1] and X[right+1]...X[N] are solved */
+    bool Found = false;
+    if ( Is_Empty( D ) )
+        return true; /* solved */
+    D_max = Find_Max( D );
+    /* option 1：X[right] = D_max */
+    /* check if |D_max-X[i]|∈D is true for all X[i]’s that have been solved */
+    OK = Check( D_max, N, left, right ); /* pruning */
+    if ( OK ) { /* add X[right] and update D */
+        X[right] = D_max;
+        for ( i=1; i<left; i++ )  Delete( |X[right]-X[i]|, D);
+        for ( i=right+1; i<=N; i++ )  Delete( |X[right]-X[i]|, D);
+        Found = Reconstruct ( X, D, N, left, right-1 );
+        if ( !Found ) { /* if does not work, undo */
+            for ( i=1; i<left; i++ )  Insert( |X[right]-X[i]|, D);
+            for ( i=right+1; i<=N; i++ )  Insert( |X[right]-X[i]|, D);
+        }
+    }
+    /* finish checking option 1 */
+      if ( !Found ) { /* if option 1 does not work */
+        /* option 2: X[left] = X[N]-D_max */
+        OK = Check( X[N]-D_max, N, left, right );
+        if ( OK ) {
+            X[left] = X[N] – D_max;
+            for ( i=1; i<left; i++ )  Delete( |X[left]-X[i]|, D);
+            for ( i=right+1; i<=N; i++ )  Delete( |X[left]-X[i]|, D);
+            Found = Reconstruct (X, D, N, left+1, right );
+            if ( !Found ) {
+                for ( i=1; i<left; i++ ) Insert( |X[left]-X[i]|, D);
+                for ( i=right+1; i<=N; i++ ) Insert( |X[left]-X[i]|, D);
+            }
+        }
+        /* finish checking option 2 */
+    } /* finish checking all the options */
     
-    for 选择 in 选择列表:
-        做选择
-        backtrack(路径, 选择列表)
-        撤销选择
+    return Found;
+}
 ```
 
-## 典型应用
-1. N皇后问题
-2. 0-1背包问题
-3. 图的着色问题
-4. 旅行商问题 
+## 博弈(Tic-tac-toe)
+
+定义number of potential wins at position P之差表示自己赢的可能.
+
+number of potential wins就是当前局势下,最大有多少种可能的赢法(一共八种赢法,三横三竖两对角线)

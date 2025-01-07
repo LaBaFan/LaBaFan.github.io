@@ -33,7 +33,6 @@ theme:
     - search.highlight      # 搜索高亮
     - search.suggest       # 搜索建议
     - navigation.footer
-    - toc.integrate
     - navigation.top        # 返回顶部按钮
     - navigation.footer     # 上一页/下一页导航
     - search.share         # 搜索结果分享
@@ -54,6 +53,7 @@ extra_css:
   - stylesheets/extra.css
 
 extra:
+  generator: false  #删除页脚显示"使用 MkDocs 材料制造"
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/LaBaFan
@@ -62,6 +62,7 @@ extra:
 copyright: Copyright &copy; 2024 LaBaFan
 
 markdown_extensions:
+  - admonition
   # Python Markdown 扩展
   - abbr                    # 支持缩写
   - attr_list              # 支持属性列表
@@ -70,7 +71,7 @@ markdown_extensions:
   - md_in_html            # 支持在 HTML 中写 Markdown
   - toc:                   # 目录配置
       permalink: true      # 显示段落永久链接
-      slugify: !!python/name:pymdownx.slugs.uslugify
+      slugify: !!python/name:slugify.slugify
       toc_depth: 3        # 目录深度
   - tables                 # 表格支持
   
@@ -83,7 +84,7 @@ markdown_extensions:
   - pymdownx.tilde        # 下标支持
   - pymdownx.critic       # 编辑标记支持
   - pymdownx.details      # 可折叠区块支持
-  - pymdownx.emoji:       # emoji 表情支持
+  - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:    # 代码高亮
@@ -104,12 +105,14 @@ markdown_extensions:
   - pymdownx.tasklist:    # 任务列表支持
       custom_checkbox: true
   - pymdownx.snippets     # 代码片段复用
+  - pymdownx.details      # 可折叠区块支持
 
 # LaTeX 支持
 extra_javascript:
-  - javascripts/mathjax.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - https://cdn.jsdelivr.net/gh/polyfill/v3/polyfill.min.js?features=es6
+  - javascripts/extra.js  #自定义javascript
+  - javascripts/mathjax.js  #Latex支持
+  - https://polyfill.io/v3/polyfill.min.js?features=es6   #Latex支持
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js   #Latex支持
 
 nav:
   - home: index.md
@@ -123,17 +126,24 @@ nav:
     - 高级数据结构:
       - 概述: notes/ADS/index.md
       - 数据结构:
+        - AVL Tree与Splay Tree: notes/ADS/AVL_tree&splay_tree.md
         - 红黑树: notes/ADS/red_black_tree.md
         - B+树: notes/ADS/b_plus_tree.md
-        - 左式堆: notes/ADS/leftist_heap.md
-        - 斜堆: notes/ADS/skew_heap.md
+        - 左式堆: notes/ADS/Leftist_heap.md
+        - 斜堆: notes/ADS/Skew_heap.md
         - 倒排索引: notes/ADS/inverted_index.md
         - 二项队列: notes/ADS/binomial_queue.md
       - 算法设计:
-        - 回溯法: notes/ADS/backtracking.md
-        - 分治法: notes/ADS/divide_and_conquer.md
-        - 动态规划: notes/ADS/dynamic_programming.md
-        - NP完全性: notes/ADS/np_complete.md
+        - BackTracking: notes/ADS/backtracking.md
+        - Divide and Conquer: notes/ADS/divide_and_conquer.md
+        - Dynamic Programming: notes/ADS/dynamic_programming.md
+        - Greedy: notes/ADS/Greedy.md
+        - NP-Complete: notes/ADS/np_complete.md
+        - Approximation: notes/ADS/Approximation.md
+        - Local Search: notes/ADS/Local_search.md
+        - Randomized Algorithm: notes/ADS/Randomized_Algorithm.md
+        - Parallel Algorithm: notes/ADS/Parallel_Algorithm.md
+        - External Sort: notes/ADS/External_Sort.md
   - 关于: about.md
 
 plugins:
