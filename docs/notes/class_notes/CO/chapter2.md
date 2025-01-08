@@ -1,3 +1,6 @@
+---
+comments: true
+---
 
 # Chapter 2
 ## RISC-V 指令

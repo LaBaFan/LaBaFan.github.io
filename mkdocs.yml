@@ -1,12 +1,14 @@
 site_name: Asteroid
-site_url: https://LaBaFan.github.io
-site_author: LaBaFan
-
+site_url: https://LaBaFan.github.io/
 repo_url: https://github.com/LaBaFan/LaBaFan.github.io
 repo_name: LaBaFan/LaBaFan.top
 
+site_description: "LaBaFan's Blog"
+
 theme:
   name: material
+  custom_dir: overrides
+  language: zh
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -29,6 +31,8 @@ theme:
     - navigation.tabs.sticky # 固定顶部标签
     - navigation.sections    # 导航分节
     - navigation.indexes    # 导航索引
+    - navigation.instant    # 即时加载
+    - navigation.instant.prefetch # 预加载
     - content.code.copy     # 代码复制按钮
     - search.highlight      # 搜索高亮
     - search.suggest       # 搜索建议
@@ -38,6 +42,7 @@ theme:
     - search.share         # 搜索结果分享
     - content.tabs.link    # 标签页同步
     - content.tooltips     # 工具提示
+    - content.code.annotate # 代码注释
     - announce.dismiss     # 可关闭的公告横幅
     - navigation.instant    # 即时加载
     - navigation.tracking   # URL 追踪
@@ -58,8 +63,13 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/LaBaFan
       name: GitHub
+  author:
+    name: LaBaFan
+    email: 2023liu@zju.edu.cn
+  comments: 
+    provider: giscus
 
-copyright: Copyright &copy; 2024 LaBaFan
+copyright: "&copy; 2024 LaBaFan"
 
 markdown_extensions:
   - admonition
@@ -72,7 +82,7 @@ markdown_extensions:
   - toc:                   # 目录配置
       permalink: true      # 显示段落永久链接
       slugify: !!python/name:slugify.slugify
-      toc_depth: 3        # 目录深度
+      toc_depth: 5        # 目录深度
   - tables                 # 表格支持
   
   # PyMdown 扩展
@@ -92,6 +102,8 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
       use_pygments: true   # 使用 Pygments 进行语法高亮
+      auto_title: true
+      linenums: true
   - pymdownx.inlinehilite # 行内代码高亮
   - pymdownx.keys         # 按键显示支持
   - pymdownx.smartsymbols # 智能符号支持
@@ -106,13 +118,100 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.snippets     # 代码片段复用
   - pymdownx.details      # 可折叠区块支持
+  - pymdownx.magiclink    # 自动链接支持
 
 # LaTeX 支持
 extra_javascript:
+  - javascripts/katex.js  #Latex支持
   - javascripts/extra.js  #自定义javascript
   - javascripts/mathjax.js  #Latex支持
   - https://polyfill.io/v3/polyfill.min.js?features=es6   #Latex支持
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js   #Latex支持
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+# mkdocs.yml
+plugins:
+  - search:
+      # 搜索索引设置
+      lang: 
+        - en
+        - zh
+      separator: '[\s\-\.]+'    # 分词分隔符
+      min_search_length: 2      # 最小搜索长度
+      prebuild_index: true      # 预构建索引
+
+      # 搜索内容配置
+      indexing:
+        full_sections: true     # 索引完整章节
+        headings: true         # 索引标题
+        content: true         # 索引内容
+        tags: true           # 索引标签
+
+      # 搜索结果排序
+      scoring:
+        title_boost: 10      # 标题权重
+        heading_boost: 5     # 标题权重
+        content_boost: 1     # 内容权重
+
+  - minify:               # 添加 minify 插件压缩文件
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true # 删除注释
+        remove_empty_space: true # 删除空格
+        remove_optional_attribute_quotes: true # 删除可选属性引号
+        removea_all_empty_space: true # 删除所有空格
+        reduce_boolean_attributes: true # 减少布尔属性
+        remove_optional_tags: true # 删除可选标签
+        rempve_redundant_attributes: true # 删除冗余属性
+        minify_js: true
+        js_files: # JS 文件
+          - javascripts/extra.js
+          - javascripts/custom.js
+        jsmin_opts:
+          mangle: true
+          compress: true
+          output: false
+        minify_css: true
+        css_files: # CSS 文件
+          - stylesheets/extra.css
+          - stylesheets/custom.css
+        cssmin_opts:
+          level: 2
+          compatibility: ie9 # 兼容性
+          format: beautify # 格式化
+
+  - glightbox:
+      # 基础设置
+      auto_caption: true              # 自动添加标题
+      caption_position: bottom        # 标题位置
+      display_description: true       # 显示描述
+
+      # 触摸设置
+      touchNavigation: true          # 触摸导航
+      loop: true                    # 循环浏览
+      effect: zoom                  # 过渡效果
+
+      # 图片设置
+      width: 100%                   # 图片宽度
+      height: auto                  # 图片高度
+      zoomable: true               # 启用缩放
+      draggable: true              # 启用拖动
+
+  - git-revision-date-localized:
+      enabled: true
+      type: date           # 显示类型：date, datetime, iso_date, iso_datetime, timeago
+      timezone: Asia/Shanghai  # 时区设置
+      locale: zh          # 本地化语言
+      fallback_to_build_date: true  # 无 git 信息时使用构建时间
+
+      # 时间格式
+      enable_creation_date: true    # 显示创建时间
+      exclude:
+        - index.md
+        - 404.md
 
 nav:
   - Home: index.md
@@ -159,12 +258,3 @@ nav:
         - CSAPP: notes/self_study/CSAPP/index.md
         - C++: notes/self_study/C++/index.md
   - About: about.md
-
-plugins:
-  - search
-  - minify:               # 添加 minify 插件压缩文件
-      minify_html: true
-      minify_js: true
-      minify_css: true
-      htmlmin_opts:
-        remove_comments: true

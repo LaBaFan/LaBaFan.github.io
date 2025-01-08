@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Dynamic Programing
 
 ## 基础问题:爬楼梯

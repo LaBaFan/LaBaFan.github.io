@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # AVL树
 
 搜索,插入和删除都是$O(\log n)$.

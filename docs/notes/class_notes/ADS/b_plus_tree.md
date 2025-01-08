@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # B+ TREE
 
 如果一个B+树是order M的话,那么:

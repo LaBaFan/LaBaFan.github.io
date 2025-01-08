@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # 倒排索引
 
 | |Relevant|Irrelevant|

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Skew Heap斜堆
 
 特殊的leftist heap,且满足父节点值小于子节点(最小堆)

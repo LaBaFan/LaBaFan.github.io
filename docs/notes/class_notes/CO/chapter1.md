@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Chapter 1
 ## 除法器
 有符号数相除,约定 ```remainder``` 符号与 被除数符号一致.

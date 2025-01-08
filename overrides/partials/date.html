@@ -1,0 +1,25 @@
+<!-- docs/overrides/partials/date.html -->
+{% if page.meta.git_revision_date_localized %}
+<div class="page-date">
+    <!-- 最后更新时间 -->
+    <div class="date-item">
+        <span class="date-icon">
+            {% include ".icons/material/update.svg" %}
+        </span>
+        <span class="date-text">
+            最后更新: {{ page.meta.git_revision_date_localized }}
+        </span>
+    </div>
+
+    <!-- 创建时间 -->
+    {% if page.meta.git_creation_date_localized %}
+    <div class="date-item">
+        <span class="date-icon">
+            {% include ".icons/material/clock-outline.svg" %}
+        </span>
+        <span class="date-text">
+            创建时间: {{ page.meta.git_creation_date_localized }}
+        </span>
+    </div>
+    {% endif %}
+</div>

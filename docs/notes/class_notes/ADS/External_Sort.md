@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # 外部排序 (External Sort)
 
 - 假设有$N$个数据，同时能处理$M$个record

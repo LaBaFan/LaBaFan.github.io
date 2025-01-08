@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # BackTracking
 
 主要考点:$\alpha ,\beta$剪枝

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Binomial Queue
 
 - 每棵树都是最小堆

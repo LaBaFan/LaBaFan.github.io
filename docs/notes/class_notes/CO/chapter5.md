@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Chapter 5. Memory
 
 ## Cache

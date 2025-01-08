@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Divide and Conquer
 General recurrence : T(N) = aT(N/b) + f(N)
 

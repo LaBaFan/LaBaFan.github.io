@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # 贪心算法(Greedy)
 
 ## 活动选择问题

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Parallel Algorithms
 
 对于一个并行算法,

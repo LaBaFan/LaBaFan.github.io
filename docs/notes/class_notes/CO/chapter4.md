@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Chapter 4.Processor
 
 ## Pipeline

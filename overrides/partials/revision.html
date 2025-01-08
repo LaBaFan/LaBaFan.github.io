@@ -1,0 +1,17 @@
+<!-- docs/overrides/partials/revision.html -->
+{% if page.meta.git_revision_date_localized %}
+<div class="revision-history">
+    <h3>更新记录</h3>
+    <div class="revision-list">
+        {% for revision in page.meta.git_history %}
+        <div class="revision-item">
+            <div class="revision-date">
+                {{ revision.date }}
+            </div>
+            <div class="revision-message">
+                {{ revision.message }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

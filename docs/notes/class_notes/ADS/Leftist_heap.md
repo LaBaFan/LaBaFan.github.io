@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Leftist Heap左式堆
 
 ## 概念

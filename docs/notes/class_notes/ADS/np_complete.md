@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # NP-complete
 
 三个经典的存在多项式时间算法的问题:

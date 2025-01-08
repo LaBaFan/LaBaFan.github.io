@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Approximation
 
 对于一维装箱问题,除非$P=NP$,否则不可能存在近似比小于$\frac 32$的算法.
