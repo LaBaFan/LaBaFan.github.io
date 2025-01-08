@@ -115,43 +115,50 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js   #Latex支持
 
 nav:
-  - home: index.md
-  - 笔记:
-    - 计算机组成与设计:
-      - 概述: notes/CO/index.md
-      - Chapter 1 - 计算机系统基础: notes/CO/chapter1.md
-      - Chapter 2 - 指令系统: notes/CO/chapter2.md
-      - Chapter 3 - 单周期CPU: notes/CO/chapter3.md
-      - Chapter 4 - 流水线: notes/CO/chapter4.md
-      - Chapter 5 - Memory: notes/CO/chapter5.md
-      - Chapter 6 - I/O: notes/CO/chapter6.md
-    - 高级数据结构与算法设计:
-      - 概述: notes/ADS/index.md
-      - 数据结构:
-        - AVL Tree与Splay Tree: notes/ADS/AVL_tree&splay_tree.md
-        - 红黑树: notes/ADS/red_black_tree.md
-        - B+树: notes/ADS/b_plus_tree.md
-        - 左式堆: notes/ADS/Leftist_heap.md
-        - 斜堆: notes/ADS/Skew_heap.md
-        - 倒排索引: notes/ADS/inverted_index.md
-        - 二项队列: notes/ADS/binomial_queue.md
-      - 算法设计:
-        - BackTracking: notes/ADS/backtracking.md
-        - Divide and Conquer: notes/ADS/divide_and_conquer.md
-        - Dynamic Programming: notes/ADS/dynamic_programming.md
-        - Greedy: notes/ADS/Greedy.md
-        - NP-Complete: notes/ADS/np_complete.md
-        - Approximation: notes/ADS/Approximation.md
-        - Local Search: notes/ADS/Local_search.md
-        - Randomized Algorithm: notes/ADS/Randomized_Algorithm.md
-        - Parallel Algorithm: notes/ADS/Parallel_Algorithm.md
-        - External Sort: notes/ADS/External_Sort.md
-    - 普通物理学2:
-      - 麦克斯韦方程组: notes/general_physics_2/Maxwell's_Equations.md
-      - 电磁波与光波: notes/general_physics_2/电磁波与光波.md
-      - 光学: notes/general_physics_2/光学.md
-      - 量子: notes/general_physics_2/量子.md
-  - 关于: about.md
+  - Home: index.md
+  - Note:
+      - 概述: notes/index.md
+      - 课程笔记:
+        - 计算机组成与设计:
+          - 概述: notes/class_notes/CO/index.md
+          - Chapter 1 - 计算机系统基础: notes/class_notes/CO/chapter1.md
+          - Chapter 2 - 指令系统: notes/class_notes/CO/chapter2.md
+          - Chapter 3 - 单周期CPU: notes/class_notes/CO/chapter3.md
+          - Chapter 4 - 流水线: notes/class_notes/CO/chapter4.md
+          - Chapter 5 - Memory: notes/class_notes/CO/chapter5.md
+          - Chapter 6 - I/O: notes/class_notes/CO/chapter6.md
+        - 高级数据结构与算法设计:
+          - 概述: notes/class_notes/ADS/index.md
+          - 数据结构:
+            - AVL Tree与Splay Tree: notes/class_notes/ADS/AVL_tree&splay_tree.md
+            - 红黑树: notes/class_notes/ADS/red_black_tree.md
+            - B+树: notes/class_notes/ADS/b_plus_tree.md
+            - 左式堆: notes/class_notes/ADS/Leftist_heap.md
+            - 斜堆: notes/class_notes/ADS/Skew_heap.md
+            - 倒排索引: notes/class_notes/ADS/inverted_index.md
+            - 二项队列: notes/class_notes/ADS/binomial_queue.md
+          - 算法设计:
+            - BackTracking: notes/class_notes/ADS/backtracking.md
+            - Divide and Conquer: notes/class_notes/ADS/divide_and_conquer.md
+            - Dynamic Programming: notes/class_notes/ADS/dynamic_programming.md
+            - Greedy: notes/class_notes/ADS/Greedy.md
+            - NP-Complete: notes/class_notes/ADS/np_complete.md
+            - Approximation: notes/class_notes/ADS/Approximation.md
+            - Local Search: notes/class_notes/ADS/Local_search.md
+            - Randomized Algorithm: notes/class_notes/ADS/Randomized_Algorithm.md
+            - Parallel Algorithm: notes/class_notes/ADS/Parallel_Algorithm.md
+            - External Sort: notes/class_notes/ADS/External_Sort.md
+        - 普通物理学Ⅱ:
+          - 概述: notes/class_notes/general_physics_2/index.md
+          - 麦克斯韦方程组: notes/class_notes/general_physics_2/Maxwell's_Equations.md
+          - 电磁波与光波: notes/class_notes/general_physics_2/电磁波与光波.md
+          - 光学: notes/class_notes/general_physics_2/光学.md
+          - 量子: notes/class_notes/general_physics_2/量子.md
+      - 自学记录:
+        - 概述: notes/self_study/index.md
+        - CSAPP: notes/self_study/CSAPP/index.md
+        - C++: notes/self_study/C++/index.md
+  - About: about.md
 
 plugins:
   - search
