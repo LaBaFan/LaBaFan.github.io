@@ -1,0 +1,57 @@
+/* docs/stylesheets/comments.css */
+.comments-container {
+    margin: 3rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.giscus {
+    width: 100%;
+}
+
+/* Giscus 主题适配 */
+.giscus-frame {
+    background-color: var(--md-default-bg-color);
+    color: var(--md-default-fg-color);
+}
+
+/* 暗色模式适配 */
+[data-md-color-scheme="slate"] .giscus-frame {
+    background-color: var(--md-default-bg-color--dark);
+    color: var(--md-default-fg-color--dark);
+}
+
+/* 评论框样式 */
+.giscus .gsc-comment-box {
+    background-color: var(--md-code-bg-color);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* 评论列表样式 */
+.giscus .gsc-comment {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: var(--md-code-bg-color);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.giscus .gsc-comment:hover {
+    transform: translateX(4px);
+}
+
+/* 按钮样式 */
+.giscus .gsc-button {
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.giscus .gsc-button:hover {
+    background-color: var(--md-primary-fg-color--dark);
+}

@@ -132,73 +132,13 @@ extra_javascript:
 
 # mkdocs.yml
 plugins:
+  - blog 
   - search:
       # 搜索索引设置
       lang: 
         - en
         - zh
-      separator: '[\s\-\.]+'    # 分词分隔符
-      min_search_length: 2      # 最小搜索长度
-      prebuild_index: true      # 预构建索引
-
-      # 搜索内容配置
-      indexing:
-        full_sections: true     # 索引完整章节
-        headings: true         # 索引标题
-        content: true         # 索引内容
-        tags: true           # 索引标签
-
-      # 搜索结果排序
-      scoring:
-        title_boost: 10      # 标题权重
-        heading_boost: 5     # 标题权重
-        content_boost: 1     # 内容权重
-
-  - minify:               # 添加 minify 插件压缩文件
-      minify_html: true
-      minify_js: true
-      minify_css: true
-      htmlmin_opts:
-        remove_comments: true # 删除注释
-        remove_empty_space: true # 删除空格
-        remove_optional_attribute_quotes: true # 删除可选属性引号
-        removea_all_empty_space: true # 删除所有空格
-        reduce_boolean_attributes: true # 减少布尔属性
-        remove_optional_tags: true # 删除可选标签
-        rempve_redundant_attributes: true # 删除冗余属性
-        minify_js: true
-        js_files: # JS 文件
-          - javascripts/extra.js
-          - javascripts/custom.js
-        jsmin_opts:
-          mangle: true
-          compress: true
-          output: false
-        minify_css: true
-        css_files: # CSS 文件
-          - stylesheets/extra.css
-          - stylesheets/custom.css
-        cssmin_opts:
-          level: 2
-          compatibility: ie9 # 兼容性
-          format: beautify # 格式化
-
-  - glightbox:
-      # 基础设置
-      auto_caption: true              # 自动添加标题
-      caption_position: bottom        # 标题位置
-      display_description: true       # 显示描述
-
-      # 触摸设置
-      touchNavigation: true          # 触摸导航
-      loop: true                    # 循环浏览
-      effect: zoom                  # 过渡效果
-
-      # 图片设置
-      width: 100%                   # 图片宽度
-      height: auto                  # 图片高度
-      zoomable: true               # 启用缩放
-      draggable: true              # 启用拖动
+      separator: '[\s\-\.]+'    # 分隔符
 
   - git-revision-date-localized:
       enabled: true
