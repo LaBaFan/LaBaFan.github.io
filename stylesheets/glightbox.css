@@ -1,0 +1,42 @@
+/* docs/stylesheets/glightbox.css */
+.glightbox-clean {
+    /* 容器样式 */
+    --glow-padding: 2rem;
+    --glow-bg: rgba(0, 0, 0, 0.95);
+
+    /* 控制按钮 */
+    --glow-btn-color: rgba(255, 255, 255, 0.8);
+    --glow-btn-hover: #fff;
+
+    /* 加载动画 */
+    --glow-loading-bg: rgba(0, 0, 0, 0.5);
+    --glow-loading-width: 40px;
+    --glow-loading-height: 40px;
+}
+
+/* 标题样式 */
+.glightbox-caption {
+    font-family: var(--md-font-family);
+    font-size: 0.9rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* 描述样式 */
+.glightbox-description {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.5rem;
+}
+
+/* 加载动画 */
+.glightbox-loading {
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: glow-spin 1s linear infinite;
+}
+
+@keyframes glow-spin {
+    to { transform: rotate(360deg); }
+}
