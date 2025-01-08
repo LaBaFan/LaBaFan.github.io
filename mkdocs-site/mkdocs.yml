@@ -1,0 +1,170 @@
+site_name: Asteroid
+site_url: https://LaBaFan.github.io
+site_author: LaBaFan
+
+repo_url: https://github.com/LaBaFan/LaBaFan.github.io
+repo_name: LaBaFan/LaBaFan.top
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到浅色模式
+  custom_dir: overrides
+
+  features:
+    - navigation.tabs        # 顶部标签导航
+    - navigation.tabs.sticky # 固定顶部标签
+    - navigation.sections    # 导航分节
+    - navigation.indexes    # 导航索引
+    - content.code.copy     # 代码复制按钮
+    - search.highlight      # 搜索高亮
+    - search.suggest       # 搜索建议
+    - navigation.footer
+    - navigation.top        # 返回顶部按钮
+    - navigation.footer     # 上一页/下一页导航
+    - search.share         # 搜索结果分享
+    - content.tabs.link    # 标签页同步
+    - content.tooltips     # 工具提示
+    - announce.dismiss     # 可关闭的公告横幅
+    - navigation.instant    # 即时加载
+    - navigation.tracking   # URL 追踪
+    - search.highlight      
+    - search.share
+    - search.suggest
+
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/library
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  generator: false  #删除页脚显示"使用 MkDocs 材料制造"
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/LaBaFan
+      name: GitHub
+
+copyright: Copyright &copy; 2024 LaBaFan
+
+markdown_extensions:
+  - admonition
+  # Python Markdown 扩展
+  - abbr                    # 支持缩写
+  - attr_list              # 支持属性列表
+  - def_list               # 支持定义列表
+  - footnotes              # 支持脚注
+  - md_in_html            # 支持在 HTML 中写 Markdown
+  - toc:                   # 目录配置
+      permalink: true      # 显示段落永久链接
+      slugify: !!python/name:slugify.slugify
+      toc_depth: 3        # 目录深度
+  - tables                 # 表格支持
+  
+  # PyMdown 扩展
+  - pymdownx.arithmatex:   # LaTeX 数学公式支持
+      generic: true
+  - pymdownx.betterem     # 优化强调语法
+  - pymdownx.caret        # 上标支持
+  - pymdownx.mark         # 高亮支持
+  - pymdownx.tilde        # 下标支持
+  - pymdownx.critic       # 编辑标记支持
+  - pymdownx.details      # 可折叠区块支持
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:    # 代码高亮
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true   # 使用 Pygments 进行语法高亮
+  - pymdownx.inlinehilite # 行内代码高亮
+  - pymdownx.keys         # 按键显示支持
+  - pymdownx.smartsymbols # 智能符号支持
+  - pymdownx.superfences:  # 复杂嵌套代码块支持
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:      # 标签页支持
+      alternate_style: true
+  - pymdownx.tasklist:    # 任务列表支持
+      custom_checkbox: true
+  - pymdownx.snippets     # 代码片段复用
+  - pymdownx.details      # 可折叠区块支持
+
+# LaTeX 支持
+extra_javascript:
+  - javascripts/extra.js  #自定义javascript
+  - javascripts/mathjax.js  #Latex支持
+  - https://polyfill.io/v3/polyfill.min.js?features=es6   #Latex支持
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js   #Latex支持
+
+nav:
+  - Home: index.md
+  - Note:
+      - 概述: notes/index.md
+      - 课程笔记:
+        - 计算机组成与设计:
+          - 概述: notes/class_notes/CO/index.md
+          - Chapter 1 - 计算机系统基础: notes/class_notes/CO/chapter1.md
+          - Chapter 2 - 指令系统: notes/class_notes/CO/chapter2.md
+          - Chapter 3 - 单周期CPU: notes/class_notes/CO/chapter3.md
+          - Chapter 4 - 流水线: notes/class_notes/CO/chapter4.md
+          - Chapter 5 - Memory: notes/class_notes/CO/chapter5.md
+          - Chapter 6 - I/O: notes/class_notes/CO/chapter6.md
+        - 高级数据结构与算法设计:
+          - 概述: notes/class_notes/ADS/index.md
+          - 数据结构:
+            - AVL Tree与Splay Tree: notes/class_notes/ADS/AVL_tree&splay_tree.md
+            - 红黑树: notes/class_notes/ADS/red_black_tree.md
+            - B+树: notes/class_notes/ADS/b_plus_tree.md
+            - 左式堆: notes/class_notes/ADS/Leftist_heap.md
+            - 斜堆: notes/class_notes/ADS/Skew_heap.md
+            - 倒排索引: notes/class_notes/ADS/inverted_index.md
+            - 二项队列: notes/class_notes/ADS/binomial_queue.md
+          - 算法设计:
+            - BackTracking: notes/class_notes/ADS/backtracking.md
+            - Divide and Conquer: notes/class_notes/ADS/divide_and_conquer.md
+            - Dynamic Programming: notes/class_notes/ADS/dynamic_programming.md
+            - Greedy: notes/class_notes/ADS/Greedy.md
+            - NP-Complete: notes/class_notes/ADS/np_complete.md
+            - Approximation: notes/class_notes/ADS/Approximation.md
+            - Local Search: notes/class_notes/ADS/Local_search.md
+            - Randomized Algorithm: notes/class_notes/ADS/Randomized_Algorithm.md
+            - Parallel Algorithm: notes/class_notes/ADS/Parallel_Algorithm.md
+            - External Sort: notes/class_notes/ADS/External_Sort.md
+        - 普通物理学Ⅱ:
+          - 概述: notes/class_notes/general_physics_2/index.md
+          - 麦克斯韦方程组: notes/class_notes/general_physics_2/Maxwell's_Equations.md
+          - 电磁波与光波: notes/class_notes/general_physics_2/电磁波与光波.md
+          - 光学: notes/class_notes/general_physics_2/光学.md
+          - 量子: notes/class_notes/general_physics_2/量子.md
+      - 自学记录:
+        - 概述: notes/self_study/index.md
+        - CSAPP: notes/self_study/CSAPP/index.md
+        - C++: notes/self_study/C++/index.md
+  - About: about.md
+
+plugins:
+  - search
+  - minify:               # 添加 minify 插件压缩文件
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
