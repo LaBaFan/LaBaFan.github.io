@@ -67,7 +67,7 @@ for Pi,1 <= i <= n pardo
 
 #### Stage 1:Partitioning
 
-$ p = \frac{n}{\log{n}}$
+$p = \frac{n}{\log{n}}$
 
 把A和B分成P组,每组$\log{n}$个元素
 
@@ -91,9 +91,9 @@ Overall: $D = O(\log{n}),W = O(p\log{n}) = O(n)$
 
 在求和问题中,直接把“ + ”号换成max就可以
 
-时间 $ \log n $
+时间:$\log{n}$
 
-work:$ O(n) $
+work:$O(n)$
 
 ### A Doubly-logarithmic Paradigm
 

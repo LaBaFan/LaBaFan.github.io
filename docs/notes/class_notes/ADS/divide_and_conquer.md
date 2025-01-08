@@ -35,6 +35,7 @@ $$
     $$
     
     有$\log_{2}{\frac{n}{\sqrt{M}}}$层,每层1个单位时间,且有$8^{\log_{2}{\frac{n}{\sqrt{M}}}}$个叶子,每个叶子M个单位时间,故总时间为
+    
     $$
     O(M \cdot 8^{\log_{2}{\frac{n}{\sqrt{M}}}} + \log_{2}{\frac{n}{\sqrt{M}}}) = O(\frac{n^3}{M})
     $$

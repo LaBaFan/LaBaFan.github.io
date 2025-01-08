@@ -105,7 +105,7 @@ $$
 
 ## Stokez公式与麦克斯韦方程
 
-![安培环路](./figures/maxwell_equation/安培环路.png)
+![安培环路](./figures/maxwell_equation/安培环路.png#pic_center)
 
 先用电场的环路定理,然后用斯托克斯公式变成面积分
 
@@ -128,7 +128,7 @@ $$
 
 但是这个结论对于电容器充电过程并不成立.
 
-![电容器充电](./figures/maxwell_equation/电容器充电.png)
+![电容器充电](./figures/maxwell_equation/电容器充电.png#pic_center)
 
 !!! warning
     对于上边的电容器充电过程,电流从左边流入,右边流出.对于$(1,2),(1,4)$构成的曲面,流进去和流出来是相等的,曲面积分为0.但是由于电容器两极板间没有电流,所以$(1,3)$构成的曲面,流入流出的电流并不相等,曲面积分不为0,不好.
@@ -192,7 +192,7 @@ $$
 
 考虑下图的电容器充电,两极板间有位移电流$I_{D}$,外边电路有自由电流$I_{0}$,我们想证明$I_{D} = I_{0}$
 
-![位移电流](./figures/maxwell_equation/位移电流.png#pic_center =50x)
+![位移电流](./figures/maxwell_equation/位移电流.png#pic_center)
 
 !!! note
     电容器之间电场$E = \frac{\sigma_{e}}{\epsilon_{0}} = \frac{q}{\epsilon_{0}A}$,$\sigma_{e}$是面电荷密度,等于$\frac{q}{A}$
@@ -209,7 +209,7 @@ $$
 
 如果电容器充满电,$i_{0} = i_{D} = 0$
 
-![变化的电场](./figures/maxwell_equation/变化的电场.png)
+![变化的电场](./figures/maxwell_equation/变化的电场.png#pic_center)
 
 变化的电场产生磁场,变化的磁场产生电场,这就是麦克斯韦方程.
 
@@ -222,4 +222,4 @@ $$
 
 最终得到麦克斯韦方程组:
 
-![麦克斯韦方程组](./figures/maxwell_equation/麦克斯韦方程组.png)
+![麦克斯韦方程组](./figures/maxwell_equation/麦克斯韦方程组.png#pic_center)
