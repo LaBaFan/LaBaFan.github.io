@@ -46,16 +46,10 @@ theme:
     - announce.dismiss     # 可关闭的公告横幅
     - navigation.instant    # 即时加载
     - navigation.tracking   # URL 追踪
-    - search.highlight      
-    - search.share
-    - search.suggest
 
   icon:
     repo: fontawesome/brands/github
     logo: material/library
-
-extra_css:
-  - stylesheets/extra.css
 
 extra:
   generator: false  #删除页脚显示"使用 MkDocs 材料制造"
@@ -129,16 +123,22 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js   #Latex支持
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+  - https://unpkg.com/lunr/lunr.js
+  - https://unpkg.com/lunr-languages/lunr.stemmer.support.js
+  - https://unpkg.com/lunr-languages/lunr.zh.js
+  - javascripts/search-enhance.js
+
+extra_css:
+  - stylesheets/extra.css
 
 # mkdocs.yml
 plugins:
   - blog 
+  - statistics
   - search:
-      # 搜索索引设置
-      lang: 
+      lang:
         - en
         - zh
-      separator: '[\s\-\.]+'    # 分隔符
 
   - git-revision-date-localized:
       enabled: true
