@@ -1,7 +1,7 @@
 site_name: Asteroid
 site_url: https://LaBaFan.github.io/
 repo_url: https://github.com/LaBaFan/LaBaFan.github.io
-repo_name: LaBaFan/LaBaFan.top
+repo_name: LaBaFan
 
 site_description: "LaBaFan's Blog"
 
@@ -193,8 +193,22 @@ nav:
           - 电磁波与光波: notes/class_notes/general_physics_2/电磁波与光波.md
           - 光学: notes/class_notes/general_physics_2/光学.md
           - 量子: notes/class_notes/general_physics_2/量子.md
-      - 自学记录:
-        - 概述: notes/self_study/index.md
-        - CSAPP: notes/self_study/CSAPP/index.md
-        - C++: notes/self_study/C++/index.md
+      - 自学记录 :
+        - 概述 : notes/self_study/index.md
+        - CSAPP : 
+          - 概述: notes/self_study/CSAPP/index.md
+          - Chapter 1.A Tour of Computer Systems: notes/self_study/CSAPP/chapter1.md
+          - Chapter 2.Program Structure and Execution: notes/self_study/CSAPP/chapter2.md
+          - Chapter 3.Machine-Level Representation of Programs: notes/self_study/CSAPP/chapter3.md
+          - Chapter 4.Processor Architecture: notes/self_study/CSAPP/chapter4.md
+          - Chapter 5.Optimizing Program Performance: notes/self_study/CSAPP/chapter5.md
+          - Chapter 6.The Memory Hierarchy: notes/self_study/CSAPP/chapter6.md
+          - Chapter 7.Linking: notes/self_study/CSAPP/chapter7.md
+          - Chapter 8.Exceptional Control Flow: notes/self_study/CSAPP/chapter8.md
+          - Chapter 9.Virtual Memory: notes/self_study/CSAPP/chapter9.md
+          - Chapter 10.System-Level I/O: notes/self_study/CSAPP/chapter10.md
+          - Chapter 11.Network Programming: notes/self_study/CSAPP/chapter11.md
+          - Chapter 12.Concurrent Programming: notes/self_study/CSAPP/chapter12.md
+        - C++(CS106L) : 
+          - 概述: notes/self_study/C++/index.md
   - About: about.md
