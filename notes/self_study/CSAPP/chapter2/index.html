@@ -2834,8 +2834,8 @@
 </table>
 </div>
 <h4 id="normalized-values">Normalized Values<a class="headerlink" href="#normalized-values" title="Permanent link">&para;</a></h4>
-<p>当 <span class="arithmatex">\(\mathrm{exp} \neq 000 \dots 0 \mathrm{and} \mathrm{exp} \neq 111 \dots 1\)</span>时,我们称之为normalized values.</p>
-<p>实际的指数 <span class="arithmatex">\(\mathrm{E} = \mathrm{Exp} - \mathrm{Bias} <span class="arithmatex">\(.其中\)</span>\mathrm{Bias} = 2^{k-1}-1\)</span>,其中<span class="arithmatex">\(k\)</span>是指数的位数.</p>
+<p>当 <span class="arithmatex">\(\mathrm{exp} \neq 000 \dots 0 \  \mathrm{and} \ \mathrm{exp} \neq 111 \dots 1\)</span>时,我们称之为normalized values.</p>
+<p>实际的指数 <span class="arithmatex">\(\mathrm{E} = \mathrm{Exp} - \mathrm{Bias}\)</span>.其中<span class="arithmatex">\(\mathrm{Bias} = 2^{k-1}-1\)</span>,其中<span class="arithmatex">\(k\)</span>是指数的位数.</p>
 <ul>
 <li>对于单精度浮点数,<span class="arithmatex">\(\mathrm{Bias} = 127\)</span></li>
 <li><span class="arithmatex">\(\mathrm{E} = -126 \sim 127\)</span></li>
@@ -2847,7 +2847,7 @@
 <li><span class="arithmatex">\(\mathrm{E} = -1022 \sim 1023\)</span></li>
 <li><span class="arithmatex">\(\mathrm{exp} = 1 \sim 2046\)</span></li>
 </ul>
-<p>而对于<span class="arithmatex">\(\mathrm{Frac}\)</span>,我们先把数字转为类似科学技术法的形式,整数部分只有一个1,然后把二进制的小数部分直接写到<span class="arithmatex">\(\mathrm{Frac}\)</span>中.</p>
+<p>而对于<span class="arithmatex">\(\mathrm{Frac}\)</span>,我们先把数字转为类似科学计数法的形式,整数部分只有一个1,然后把二进制的小数部分直接写到<span class="arithmatex">\(\mathrm{Frac}\)</span>中.</p>
 <h4 id="denormalized-values">Denormalized Values<a class="headerlink" href="#denormalized-values" title="Permanent link">&para;</a></h4>
 <p>这里我们的Frac部分就不是1.xxxxxx的形式了,而是0.xxxxxx的形式.这样的数值称为denormalized values.表示0以及很靠近0数值.</p>
 <p>此时的指数<span class="arithmatex">\(\mathrm{E} = 1 - \mathrm{Bias}\)</span>,而<span class="arithmatex">\(\mathrm{exp} = 0\)</span>.</p>
@@ -2868,8 +2868,8 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Visualization</p>
+<p><img alt="float_range" src="../figure/chapter2/float_range.png" /></p>
 </div>
-<p>​   <img alt="float_range" src="../figure/chapter2/float_range.png" /></p>
 <h4 id="special-properties-of-the-ieee-encoding">Special Properties of the IEEE Encoding<a class="headerlink" href="#special-properties-of-the-ieee-encoding" title="Permanent link">&para;</a></h4>
 <ul>
 <li>FP Zero Same as Integer Zero  </li>
@@ -2888,8 +2888,8 @@
 <p>一共有四种舍入方式:</p>
 <ul>
 <li>Towards zero: 向0舍入</li>
-<li>Towards up <span class="arithmatex">\(\(+\infty\)\)</span>: 向上舍入</li>
-<li>Towards down <span class="arithmatex">\(\(-\infty\)\)</span>: 向下舍入</li>
+<li>Towards up <span class="arithmatex">\((+\infty)\)</span>: 向上舍入</li>
+<li>Towards down <span class="arithmatex">\((-\infty)\)</span>: 向下舍入</li>
 <li>Nearest Even: 舍入到最近的偶数</li>
 </ul>
 <p>其中Nearest Even是最常用的舍入方式.前三种舍入方式都好理解,但是Nearest Even有一些特殊的规则:</p>
