@@ -210,5 +210,7 @@ nav:
           - Chapter 11.Network Programming: notes/self_study/CSAPP/chapter11.md
           - Chapter 12.Concurrent Programming: notes/self_study/CSAPP/chapter12.md
         - C++(CS106L) : 
-          - 概述: notes/self_study/C++/index.md
+          - 概述: notes/self_study/CS106L/index.md
+          - L2.Structures: notes/self_study/CS106L/Lecture2.md
+          - L3.references: notes/self_study/CS106L/Lecture3.md
   - About: about.md
