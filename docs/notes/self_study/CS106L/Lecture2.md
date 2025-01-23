@@ -90,12 +90,19 @@ auto h = [](int i) {return 3*i;};
 
 !!! note "Answers"
     a = int
+
     b = double
+
     c = char
+
     d = char*
+
     e = std::string
+
     f = std::pair<int,char*>
+
     g = std::initializer_list<int>
+    
     h = only konwn by compiler
 
 ### When and Why to Use Auto

@@ -212,9 +212,10 @@ $$
     | S | exp | frac |
 
 #### Normalized Values
-当 $\mathrm{exp} \neq 000 \dots 0 \mathrm{and} \mathrm{exp} \neq 111 \dots 1$时,我们称之为normalized values.
 
-实际的指数 $\mathrm{E} = \mathrm{Exp} - \mathrm{Bias} $.其中$\mathrm{Bias} = 2^{k-1}-1$,其中$k$是指数的位数.
+当 $\mathrm{exp} \neq 000 \dots 0 \  \mathrm{and} \ \mathrm{exp} \neq 111 \dots 1$时,我们称之为normalized values.
+
+实际的指数 $\mathrm{E} = \mathrm{Exp} - \mathrm{Bias}$.其中$\mathrm{Bias} = 2^{k-1}-1$,其中$k$是指数的位数.
 
 - 对于单精度浮点数,$\mathrm{Bias} = 127$
   - $\mathrm{E} = -126 \sim 127$
@@ -224,7 +225,7 @@ $$
   - $\mathrm{E} = -1022 \sim 1023$
   - $\mathrm{exp} = 1 \sim 2046$
 
-而对于$\mathrm{Frac}$,我们先把数字转为类似科学技术法的形式,整数部分只有一个1,然后把二进制的小数部分直接写到$\mathrm{Frac}$中.
+而对于$\mathrm{Frac}$,我们先把数字转为类似科学计数法的形式,整数部分只有一个1,然后把二进制的小数部分直接写到$\mathrm{Frac}$中.
 
 #### Denormalized Values
 这里我们的Frac部分就不是1.xxxxxx的形式了,而是0.xxxxxx的形式.这样的数值称为denormalized values.表示0以及很靠近0数值.
@@ -244,8 +245,7 @@ $$
   - E.g. $sqrt(-1),\infty - \infty ,\infty \times 0$
 
 !!! Note "Visualization"
-
-​	![float_range](./figure/chapter2/float_range.png)
+    ![float_range](./figure/chapter2/float_range.png)
 
 #### Special Properties of the IEEE Encoding
 
@@ -263,8 +263,8 @@ $$
 一共有四种舍入方式:
 
 - Towards zero: 向0舍入
-- Towards up $\(+\infty\)$: 向上舍入
-- Towards down $\(-\infty\)$: 向下舍入
+- Towards up $(+\infty)$: 向上舍入
+- Towards down $(-\infty)$: 向下舍入
 - Nearest Even: 舍入到最近的偶数
 
 其中Nearest Even是最常用的舍入方式.前三种舍入方式都好理解,但是Nearest Even有一些特殊的规则:
