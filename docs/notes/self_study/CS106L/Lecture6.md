@@ -66,8 +66,9 @@ All iterators must support:
 ![Iterator Categories](./figures/L6/iterator_categories.png)
 
 Supported Operations:
+
 - Copy construct/assign (```=```) + destructible
-- <font color = purple>Default constructible
+- <font color = purple>Default constructible</font>
 - Equality comparable (```==``` and ```!=```)
 - <font color = DodgerBlue> Dereferencable r-value (```auto e = *iter, ->```)</font>
 - <font color = red> Dereferencable l-value (```*iter = e```) </font>

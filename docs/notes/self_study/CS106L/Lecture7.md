@@ -162,7 +162,7 @@ int main() {
 
 ??? question "What if we want to change the limit?"
     
-    Here out function only compares with 5,what if we want to compare with other numbers?
+    Here our function only compares with 5,what if we want to compare with other numbers?
 
     One direct way is to write a new function for each number.But that's not a good idea.
 
@@ -258,6 +258,7 @@ auto fun2 = [&, banned](parameters) -> return_value {
         auto is_less_than_limit = [limit](auto val) {
             return val < limit;
         };
+        ```
 
 
     === "隐式捕获"
@@ -323,9 +324,10 @@ std::map<std::function,int> map2;   // Error - not comparable
 3. From all viable functions,<font color = green>rank</font> the viable functions based on the <font color = green>type conversions necessary</font> and the priority of various template types.Choose the <font color = green>best function</font>.
 
 !!! note "Summary"
+
     查找匹配的函数,然后检查函数的参数数量以及类型,再对所有符合条件的函数排序,选择最佳函数.
 
-!!! important "SFINAE'
+!!! info "SFINAE"
 
     - **S**ubstitution **F**ailure **I**s **N**ot **A**n **E**rror
     - When substituting the deduced types fails(in the immdeiate context) because the type doesn't satisfy implicit interfaces,this does not result in a compile error.
