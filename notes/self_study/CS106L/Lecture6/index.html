@@ -9,8 +9,10 @@
         <meta name="description" content="LaBaFan's Blog">
       
       
+        <meta name="author" content="LaBaFan">
       
-        <link rel="canonical" href="https://LaBaFan.github.io/notes/self_study/CS106L/Lecture6/">
+      
+        <link rel="canonical" href="https://LaBaFan.cc/notes/self_study/CS106L/Lecture6/">
       
       
         <link rel="prev" href="../Lecture5/">
@@ -227,7 +229,7 @@
   
     
   
-  Home
+  Welcome
 
       </a>
     </li>
@@ -335,7 +337,7 @@
         
   
   <span class="md-ellipsis">
-    Home
+    Welcome
   </span>
   
 
@@ -1819,6 +1821,8 @@
       
         
       
+        
+      
     
     
       
@@ -2111,6 +2115,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L9.STL Summary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2342,17 +2367,19 @@
 - Dereferencable (<code>*iter</code>) - either readable or writable (not necessarily both)
 - Incrementable (<code>++iter</code>) - sign pass (previous iter invalidated after ++)</p>
 <p><img alt="Iterator Categories" src="../figures/L6/iterator_categories.png" /></p>
-<p>Supported Operations:
-- Copy construct/assign (<code>=</code>) + destructible
-- <font color = purple>Default constructible
-- Equality comparable (<code>==</code> and <code>!=</code>)
-- <font color = DodgerBlue> Dereferencable r-value (<code>auto e = *iter, -&gt;</code>)</font>
-- <font color = red> Dereferencable l-value (<code>*iter = e</code>) </font>
-- Single-pass Incrementable (<code>++iter</code>)
-- <font color = purple> Multi-pass Incrementable</font>
-- <font color = green> Decrementable (<code>--iter</code>) </font>
-- <font color = orange> Random access (<code>+,-,+=,-=,offset[]</code>) </font>
-- <font color = orange> Inequality comparable (<code>&lt;,&gt;,&lt;=,&gt;=</code>) </font></p>
+<p>Supported Operations:</p>
+<ul>
+<li>Copy construct/assign (<code>=</code>) + destructible</li>
+<li><font color = purple>Default constructible</font></li>
+<li>Equality comparable (<code>==</code> and <code>!=</code>)</li>
+<li><font color = DodgerBlue> Dereferencable r-value (<code>auto e = *iter, -&gt;</code>)</font></li>
+<li><font color = red> Dereferencable l-value (<code>*iter = e</code>) </font></li>
+<li>Single-pass Incrementable (<code>++iter</code>)</li>
+<li><font color = purple> Multi-pass Incrementable</font></li>
+<li><font color = green> Decrementable (<code>--iter</code>) </font></li>
+<li><font color = orange> Random access (<code>+,-,+=,-=,offset[]</code>) </font></li>
+<li><font color = orange> Inequality comparable (<code>&lt;,&gt;,&lt;=,&gt;=</code>) </font></li>
+</ul>
 <p><img alt="Hierarchy" src="../figures/L6/Hierarchy.png" /></p>
 <h2 id="erase-and-iterator-invalidation">Erase and Iterator Invalidation<a class="headerlink" href="#erase-and-iterator-invalidation" title="Permanent link">&para;</a></h2>
 <p>Example : remove first element that begin with 'A'</p>
@@ -2445,7 +2472,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年1月23日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年2月4日</span>
   </span>
 
     
