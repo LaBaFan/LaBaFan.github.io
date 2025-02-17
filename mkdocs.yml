@@ -134,6 +134,7 @@ extra_javascript:
 
 extra_css:
   - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
 
 # mkdocs.yml
 plugins:
@@ -197,6 +198,9 @@ nav:
           - 电磁波与光波: notes/class_notes/general_physics_2/电磁波与光波.md
           - 光学: notes/class_notes/general_physics_2/光学.md
           - 量子: notes/class_notes/general_physics_2/量子.md
+        - 数据库系统(DB):
+          - 概述: notes/class_notes/DB/index.md
+          - ch1-introduction: notes/class_notes/DB/ch1.md
       - 自学记录 :
         - 概述 : notes/self_study/index.md
         - CSAPP : 
@@ -215,12 +219,12 @@ nav:
           - Chapter 12.Concurrent Programming: notes/self_study/CSAPP/chapter12.md
         - C++(CS106L) : 
           - 概述: notes/self_study/CS106L/index.md
-          - L2.Structures: notes/self_study/CS106L/Lecture2.md
-          - L3.References: notes/self_study/CS106L/Lecture3.md
-          - L4.Streams: notes/self_study/CS106L/Lecture4.md
-          - L5.Containers: notes/self_study/CS106L/Lecture5.md
-          - L6.Iterators: notes/self_study/CS106L/Lecture6.md
-          - L7.Template: notes/self_study/CS106L/Lecture7.md
-          - L8.Functions and Algorithms: notes/self_study/CS106L/Lecture8.md
-          - L9.STL Summary: notes/self_study/CS106L/Lecture9.md
-  - About: about.md
+          - Basic:
+            - L2.Structures: notes/self_study/CS106L/Lecture2.md
+            - L3.References: notes/self_study/CS106L/Lecture3.md
+            - L4.Streams: notes/self_study/CS106L/Lecture4.md
+            - L5.Containers: notes/self_study/CS106L/Lecture5.md
+            - L6.Iterators: notes/self_study/CS106L/Lecture6.md
+            - L7.Template: notes/self_study/CS106L/Lecture7.md
+            - L8.Functions and Algorithms: notes/self_study/CS106L/Lecture8.md
+            - L9.STL Summary: notes/self_study/CS106L/Lecture9.md

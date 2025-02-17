@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.sage": "python",
+        "*.c": "c",
+        "vector": "cpp"
+    }
+}
