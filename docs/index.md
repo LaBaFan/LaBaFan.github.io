@@ -19,4 +19,5 @@ comments: true
 
 ---
 
-<font size="1">最后更新时间: 2025-02-04</font>
+<font size="1">最后更新时间: <script> document.write(new Date().toLocaleDateString()); </script>
+</font>
