@@ -13,11 +13,11 @@ comments: true
 <font size = "4">**挖坑**</font>
 
 - [ ] 学习CSAPP(大工程)😇
-- [ ] 学习CS106L(已经进行到一半了)
+- [ ] 学习CS106L(基础部分差不多完结,OOP部分参见OOP课堂笔记)
 - [ ] 补全计组,ads笔记
-
+- [ ] 学习汇编语言
 
 ---
 
-<font size="1">最后更新时间: <script> document.write(new Date().toLocaleDateString()); </script>
+<font size="1">最后更新时间: 2025-02-19
 </font>
