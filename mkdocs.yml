@@ -34,9 +34,12 @@ theme:
     - navigation.tabs        # 顶部标签导航
     - navigation.tabs.sticky # 固定顶部标签
     - navigation.sections    # 导航分节
+    - navigation.expand      # 展开导航
     - navigation.indexes    # 导航索引
-    - navigation.instant    # 即时加载
+    # - navigation.instant    # 即时加载
+    - navigation.prune       # 修剪导航
     - navigation.instant.prefetch # 预加载
+    - navigation.tracking   # URL 追踪
     - content.code.copy     # 代码复制按钮
     - search.highlight      # 搜索高亮
     - search.suggest       # 搜索建议
@@ -48,8 +51,9 @@ theme:
     - content.tooltips     # 工具提示
     - content.code.annotate # 代码注释
     - announce.dismiss     # 可关闭的公告横幅
-    - navigation.instant    # 即时加载
-    - navigation.tracking   # URL 追踪
+
+    - toc.follow            # 目录跟随
+
 
   icon:
     repo: fontawesome/brands/github
@@ -80,7 +84,7 @@ markdown_extensions:
   - toc:                   # 目录配置
       permalink: true      # 显示段落永久链接
       slugify: !!python/name:slugify.slugify
-      toc_depth: 5        # 目录深度
+      toc_depth: 3        # 目录深度
   - tables                 # 表格支持
   
   # PyMdown 扩展
@@ -140,6 +144,7 @@ extra_css:
 plugins:
   - blog 
   - statistics
+  - tags
   - search:
       lang:
         - en
@@ -207,6 +212,7 @@ nav:
         - 数据库系统(DB):
           - 概述: notes/class_notes/DB/index.md
           - ch1-introduction: notes/class_notes/DB/ch1.md
+          - ch2-The Relational Model: notes/class_notes/DB/ch2.md
         - 计算机体系结构(CA):
           - 概述: notes/class_notes/CA/index.md
           - 计算机设计基础: notes/class_notes/CA/ch1.md
@@ -214,18 +220,21 @@ nav:
         - 概述 : notes/self_study/index.md
         - CSAPP : 
           - 概述: notes/self_study/CSAPP/index.md
-          - Chapter 1.A Tour of Computer Systems: notes/self_study/CSAPP/chapter1.md
-          - Chapter 2.Program Structure and Execution: notes/self_study/CSAPP/chapter2.md
-          - Chapter 3.Machine-Level Representation of Programs: notes/self_study/CSAPP/chapter3.md
-          - Chapter 4.Processor Architecture: notes/self_study/CSAPP/chapter4.md
-          - Chapter 5.Optimizing Program Performance: notes/self_study/CSAPP/chapter5.md
-          - Chapter 6.The Memory Hierarchy: notes/self_study/CSAPP/chapter6.md
-          - Chapter 7.Linking: notes/self_study/CSAPP/chapter7.md
-          - Chapter 8.Exceptional Control Flow: notes/self_study/CSAPP/chapter8.md
-          - Chapter 9.Virtual Memory: notes/self_study/CSAPP/chapter9.md
-          - Chapter 10.System-Level I/O: notes/self_study/CSAPP/chapter10.md
-          - Chapter 11.Network Programming: notes/self_study/CSAPP/chapter11.md
-          - Chapter 12.Concurrent Programming: notes/self_study/CSAPP/chapter12.md
+          - Part 1.程序结构和执行:
+            - Chapter 1.A Tour of Computer Systems: notes/self_study/CSAPP/chapter1.md
+            - Chapter 2.信息的表示和处理: notes/self_study/CSAPP/chapter2.md
+            - Chapter 3.程序的机器级表示: notes/self_study/CSAPP/chapter3.md
+            - Chapter 4.处理器体系结构: notes/self_study/CSAPP/chapter4.md
+            - Chapter 5.优化程序性能: notes/self_study/CSAPP/chapter5.md
+            - Chapter 6.存储器层次结构: notes/self_study/CSAPP/chapter6.md
+          - Part 2.在系统上运行程序:
+            - Chapter 7.链接: notes/self_study/CSAPP/chapter7.md
+            - Chapter 8.异常控制流: notes/self_study/CSAPP/chapter8.md
+            - Chapter 9.虚拟内存: notes/self_study/CSAPP/chapter9.md
+          - Part 3.程序间的交互和通信:
+            - Chapter 10.系统级I/O: notes/self_study/CSAPP/chapter10.md
+            - Chapter 11.网络编程: notes/self_study/CSAPP/chapter11.md
+            - Chapter 12.并发编程: notes/self_study/CSAPP/chapter12.md
         - C++(CS106L) : 
           - 概述: notes/self_study/CS106L/index.md
           - Basic:
