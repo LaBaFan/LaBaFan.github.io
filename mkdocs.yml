@@ -213,6 +213,7 @@ nav:
           - 概述: notes/class_notes/DB/index.md
           - ch1-introduction: notes/class_notes/DB/ch1.md
           - ch2-The Relational Model: notes/class_notes/DB/ch2.md
+          - ch3-SQL: notes/class_notes/DB/ch3.md
         - 计算机体系结构(CA):
           - 概述: notes/class_notes/CA/index.md
           - 计算机设计基础: notes/class_notes/CA/ch1.md

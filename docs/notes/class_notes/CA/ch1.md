@@ -108,11 +108,11 @@ $$
 
 ### **Measuring Data Size**
 
-- kibibyte(KiB): $2^{10}(1024) \ bytes$
-- mebibyte(MiB): $2^{20}(1024^2) \ bytes$
-- gibibyte(GiB): $2^{30}(1024^3) \ bytes$
-- tebibyte(TiB): $2^{40}(1024^4) \ bytes$
-- pebibyte(PiB): $2^{50}(1024^5) \ bytes$
+- kibibyte(KiB): $2^{10}(1024) \ \mathrm{bytes}$
+- mebibyte(MiB): $2^{20}(1024^2) \ \mathrm{bytes}$
+- gibibyte(GiB): $2^{30}(1024^3) \ \mathrm{bytes}$
+- tebibyte(TiB): $2^{40}(1024^4) \ \mathrm{bytes}$
+- pebibyte(PiB): $2^{50}(1024^5) \ \mathrm{bytes}$
 
 ### **CPU Performance**
 
@@ -184,6 +184,7 @@ $$
 $$
 
 Performance depends on:
+
 - Algorithm:affects IC, possibly CPI
 - Programming language: affects IC, CPI
 - Compiler: affects IC, CPI
@@ -233,4 +234,67 @@ $$
 \mathrm{Speedup_{overall}} = \frac{\mathrm{Execution\ Time_{old}}}{\mathrm{Execution\ Time_{new}}} = \frac{1}{(1 \ - f) + \frac{f}{Sp}}
 $$
 
-- Improved ratio:
+- Improved ratio:在原来的系统中，能够被改进的部分所占的比例
+    - 永远小于等于1
+- Component speedup ratio:通过改进后的系统，改进部分的速度提升比例
+    - 永远大于1
+
+!!! note 
+    
+    如果整个系统只有一部分可以被改进，那么改进后的系统的速度提升是有限的。通常不会超过
+
+    $$
+    \frac{1}{1 - \mathrm{Improved\ ratio}}
+    $$
+
+## **Great Architecture Ideas**
+
+### **Moore's Law**
+
+- The number of transistors on a chip doubles every 18-24 months.
+- Architects have to anticipate where technology will be when the design of a system is completed.
+
+### **Use abstraction to simplify design**
+
+- Abstraction is used to represent the design at different levels of representation.
+- Lower-level details can be hidden to provide simpler models at higher levels.
+
+### **Make the common case fast**
+
+- Identify the common case and try to improve it.
+- Most cost efficient method to obtain improvement.
+
+### **Improve performance via parallelism**
+
+- Improve performance by performing operations in parallel.
+- There are many levels of parallelism - instruction-level, process-level, etc.
+
+### **Improve performance via pipelining**
+
+- Break tasks into stages so that multiple tasks can be simultaneously performed in different stages.
+- Commonly used to improve instruction throughput.
+
+### **Improve performance via prediction**
+
+- Sometime faster to assume a particular result than waiting until the result is known.
+- Known as speculation and is used to guess results of branches.
+
+### **Use a hierarchy of memories** 
+
+- Make the fastest, smallest, and most expensive per bit memory the first level accessed and the slowest, largest, and cheapest per bit memory the last level accessed.
+- Allows most of the accesses to be caught at the first level and be able to retain most of the information at the last level.
+
+### **Improve dependability via redundancy**
+
+- Include redundant components that can both detect and often correct failures.
+- Used at many different levels.
+
+## **ISA**
+
+### **ISA: Instruction Set Architecture**
+
+- Instruction Set Design Basic Principles:
+    - Compatibility
+    - Bersatility
+    - High efficiency
+    - Security
