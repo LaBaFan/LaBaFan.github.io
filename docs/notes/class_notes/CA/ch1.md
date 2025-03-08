@@ -298,3 +298,158 @@ $$
     - Bersatility
     - High efficiency
     - Security
+
+### **ISA Classes**
+
+- Stack architecture
+- Accumulator architecture
+- General-purpose register architecture(GPR)
+
+### **ISA Classes: Stack Architecture**
+
+Implicit Operands on the Top Of the Stack(TOS)
+
+!!! example
+
+    === "```C = A + B```"
+
+        Push A
+
+        Push B
+
+        Add
+
+        Pop C
+
+    === "98 * (12 + 45)"
+
+        Push 98
+
+        Push 12
+
+        Push 45
+
+        Add
+
+        Mul
+
+        Pop res
+
+### **ISA Classes: Accumulator Architecture**
+
+One implicit operand: the accumulator
+
+One explicit operand: mem location
+
+!!! example
+
+    === "```C = A + B```"
+
+        Load A
+
+        Add B
+
+        Store C
+
+    === "98 * (12 + 45)"
+    
+        Load 12
+
+        Add 45
+
+        Mul 98
+
+        Store res
+
+### **ISA Classes: General-purpose Register Architecture(GPR)**
+
+Only explicit operands: registers, memory locations
+
+Operand access: direct memory access, loaded into temporary storage first
+
+Two Classes:
+
+- Register-memory architecture: any instruction can access memory
+- Load-store architecture: only load and store instructions can access memory
+
+!!! example "Register-memory architecture"
+
+    ```C = A + B```
+
+        Load R1, A
+
+        Add R3, R1, B
+
+        Store R3, C
+
+!!! example "Load-store architecture"
+
+    ```C = A + B```
+
+        Load R1, A
+
+        Load R2, B
+
+        Add R3, R1, R2
+
+        Store R3, C
+
+For ```D = A * B - ( A + C * B)```
+
+<pre>
+<code>
+<font color = blue>Stack Architecture</font>
+push A
+push B
+mul     // A * B
+push A
+push C
+push B
+mul     // C * B
+add     // A + C * B
+sub     // A * B - (A + C * B)
+pop D
+</code>
+</pre>
+
+<pre>
+<code>
+<font color = blue>Accumulator Architecture</font>
+load B
+mul C   // C * B
+add A   // A + C * B
+store D // D = A + C * B
+push A
+mul B   // A * B
+sub D   // D = A * B - (A + C * B)
+store D
+</code>
+</pre>
+
+<pre>
+<code>
+<font color = blue>Register Architecture</font>
+Load R1, A      // R1 = A
+Load R2, B      // R2 = B
+MUL R3, R1, R2  // R3 = A * B
+Load R4, C      // R4 = C
+MUL R4, R4, R2  // R4 = C * B
+ADD R1, R1, R4  // R1 = A + C * B
+SUB R1, R3, R1  // R1 = A * B - (A + C * B)
+Store R1, D     // D = A * B - (A + C * B)
+</code>
+</pre>
+
+<pre>
+<code>
+<font color = blue>Load-store Architecture</font>
+load R1, A      // R1 = A
+load R2, B      // R2 = B
+load R3, C      // R3 = C
+mul R4, R2, R3  // R4 = C * B
+add R5, R1, R4  // R5 = A + C * B
+mul R6, R1, R2  // R6 = A * B
+sub R7, R6, R5  // R7 = A * B - (A + C * B)
+store R7, D     // D = A * B - (A + C * B)
+</code>
+</pre>

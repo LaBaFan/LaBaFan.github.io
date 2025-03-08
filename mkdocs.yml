@@ -36,7 +36,7 @@ theme:
     - navigation.sections    # 导航分节
     - navigation.expand      # 展开导航
     - navigation.indexes    # 导航索引
-    # - navigation.instant    # 即时加载
+    - navigation.instant    # 即时加载
     - navigation.prune       # 修剪导航
     - navigation.instant.prefetch # 预加载
     - navigation.tracking   # URL 追踪
@@ -51,7 +51,6 @@ theme:
     - content.tooltips     # 工具提示
     - content.code.annotate # 代码注释
     - announce.dismiss     # 可关闭的公告横幅
-
     - toc.follow            # 目录跟随
 
 
@@ -84,7 +83,7 @@ markdown_extensions:
   - toc:                   # 目录配置
       permalink: true      # 显示段落永久链接
       slugify: !!python/name:slugify.slugify
-      toc_depth: 3        # 目录深度
+      toc_depth: 5        # 目录深度
   - tables                 # 表格支持
   
   # PyMdown 扩展
@@ -163,12 +162,6 @@ plugins:
         - index.md
       strict: true
 
-      # 时间格式
-      enable_creation_date: true    # 显示创建时间
-      exclude:
-        - index.md
-        - 404.md
-
 nav:
   - Welcome: index.md
   - Note:
@@ -217,6 +210,7 @@ nav:
         - 计算机体系结构(CA):
           - 概述: notes/class_notes/CA/index.md
           - 计算机设计基础: notes/class_notes/CA/ch1.md
+          - 流水线: notes/class_notes/CA/ch2.md
       - 自学记录 :
         - 概述 : notes/self_study/index.md
         - CSAPP : 

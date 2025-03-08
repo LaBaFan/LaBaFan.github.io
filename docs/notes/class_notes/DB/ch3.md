@@ -343,35 +343,35 @@ from instructor natural join teaches;
 !!! important
 
     Beware of unrelated attributes with same name which get equated incorrectly.
-
+    
     - List the names of instructors along with the titles of courses that they teach.
         - ```course(course_id, title, dept_name, credits)```
         - ```teaches(ID, course_id, sec_id, semester, year)```
         - ```instructor(ID, name, dept_name, salary)```
     - Incorrect version(makes course.dept_name = instructor.dept_name)
-
+    
     ```SQL
     select name, title
     from instructor natural join teaches natural join course;
     ```
-
+    
     - Correct version
-
+    
     ```SQL
     select name, title
     from instructor natural join teaches, course
     where teaches.course_id = course.course_id;
     ```
-
+    
     or
-
+    
     ```SQL
     select name, title
     from (instructor natural join teaches) join course using (course_id);
     ```
-
+    
     or
-
+    
     ```SQL
     select name, title
     from instructor, teaches, course
@@ -493,21 +493,21 @@ where salary is null
 
     - <font color = red>comparisons with null values return the special truth value:  unknown</font>
     - Three-valued logic using the truth value unknown:
-
+    
     === "OR"
-
+    
         - unknown or true = true
         - unknown or false = unknown
         - unknown or unknown = unknown
-
+    
     === "AND"
-
+    
         - true and unknown = unknown
         - false and unknown = false
         - unknown and unknown = unknown
-
+    
     === "NOT"
-
+    
         - not unknown = unknown
 
 ## **Aggregate Functions**
@@ -609,7 +609,7 @@ where salary > all (select salary
         (select budget from department
         where department.dept_name = instructor.dept_name);
     ```
-
+    
     这里的```dept_name```是这个表的主键，只返回一个元组，所以我们不能用```some, all```这样的关键字。
 
 Runtime error if subquery returns more than one result value.
@@ -624,7 +624,7 @@ The exists construct returns the value true if the argument subquery is nonempty
 !!! example
 
     找到所有在2009年秋学期和2010年春学期都有课的课程
-
+    
     ```SQL
     select course_id
     from section as S
@@ -638,7 +638,7 @@ The exists construct returns the value true if the argument subquery is nonempty
 !!! example
 
     找到所有参加了生物系所有课程的学生
-
+    
     ```SQL
     select distinct S.ID, S.name
     from student as S
@@ -650,7 +650,7 @@ The exists construct returns the value true if the argument subquery is nonempty
                       from takes as T
                       where S.ID = T.ID));
     ```
-
+    
     逆向考虑，找到这样的学生，不存在他没选过的生物系的课。
 
 ### **Test for Absence of Duplicate Tuples**
@@ -664,7 +664,7 @@ The **unique** construct tests whether a subquery has any duplicate tuples in it
 !!! example
 
     Find all courses that were offered at most once in 2009.
-
+    
     ```SQL
     select T.course_id
     from course as T
@@ -676,7 +676,7 @@ The **unique** construct tests whether a subquery has any duplicate tuples in it
 !!! example "Another Example"
 
     Find all courses that were offered once in 2009
-
+    
     ```SQL
     select T.course_id
     from course as T
@@ -687,7 +687,7 @@ The **unique** construct tests whether a subquery has any duplicate tuples in it
                         from section as R
                         where R.course_id = T.course_id and R.year = 2009);
     ```
-
+    
     由于```unqiue```是找一次或两次，所以我们必须加上后边的```exists```来保证存在一次，否则有不开的课也会被算进去。
 
 ## **Modification of the Database**
@@ -730,3 +730,4 @@ set salary = case
                 else salary * 1.05
             end;
 ```
+
