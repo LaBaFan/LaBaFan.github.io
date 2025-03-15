@@ -2,4 +2,3 @@
 comments: true
 ---
 
-# **Using Objects**

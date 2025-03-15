@@ -266,7 +266,7 @@ $$
 
 如果 $n \gg m$，那么 $Sp \approx m$。
 
-### **Efficiency($\eta$)**
+### **Efficiency**
 
 Efficiency(效率): 从计算机硬件考虑，纵轴代表使用不同的部件，效率指的是我们真正使用这个部件占整个时空的百分比。
 
@@ -335,3 +335,182 @@ $$
 - 大量的指令同时进行，中间可能存在复杂的依赖关系
 - 控制信号太多了
 - 需要特别多的流水线寄存器，硬件开销太大
+
+## **Hazards of Pipeline**
+
+更详细的笔记请看计组部分的笔记。
+
+Hazards
+
+- Situations that prevent starting the next instruction in the next cycle
+- Structure hazards
+    - A required resource is busy
+- Data hazard
+    - Need to wait for previous instruction to complete its data read/write
+- Control hazard
+    - Deciding on control action depends on previous instruction
+
+### **Structure Hazards**
+
+对于流水线中结构的冲突
+
+<figure markdown="span">
+![](./figure/ch2/stru_ha.png){width="400"}
+<figurecaption>Structure Hazards</figurecaption>
+</figure>
+
+上图就是流水线中发生了对 memory 对冲突。
+
+对于结构冲突，一般通过加 bubble 或者硬件的方式解决。
+
+### **Data Hazards**
+
+An instruction depends on completion of data access by a previous instruction
+
+- Read after write(RAW).可以通过 forwarding 解决
+```assembly
+FADD.D f6, f0, f12
+FSUB.D f8, f6, f14
+```
+
+- Write after read(WAR)
+```assembly
+FDIV.D f2, f6, f4
+FADD.D f6, f0, f12
+```
+
+- Write after write(WAW)
+```assembly
+FDIV.D f2, f0, f4
+FSUB.D f2, f6, f14
+```
+
+但是并不是所有的 RAW 都可以通过 forwarding 解决，比如 load-use hazard.
+
+这时候需要在 load 指令后边加一个 bubble, 然后才能 进行 forwarding.
+
+### **Control Hazards**
+
+- Conditional jump: branch
+- Unconditional jump: jal, jalr
+
+为了减少分支带来的影响，可以采用预测分支的方式。
+
+- Static branch prediction
+    - Always taken
+    - Always not taken
+    - Delayed branch
+- Dynamic branch prediction
+
+## **Control Hazards**
+
+### **Static Branch Prediction**
+
+- Always taken: 永远预测分支会发生
+- Always not taken: 永远预测分支不会发生
+- Delayed branch: 延时槽
+
+不论我是否跳转，有些指令是一定会执行的，可以把这些指令放在延时槽中。
+
+### **Dynamic Branch Prediction**
+
+Use dynamic prediction
+
+- Branch prediction buffer (aka branch history table)
+- Indexed by recent branch instruction addresses
+- Stores outcome (taken/not taken)
+- To execute a branch
+    - Check table, except the same outcome: 把之前的所有跳转结果都记录下来，根据之前的结果预测这次的结果。
+    - Start fetching from fall-through or target: 根据预测的结果，开始取指。
+    - If wrong, flush pipeline and flip prediction: 如果预测错误，就把之前的指令都清空，重新开始。
+
+#### **Branch History Table(BHT)**
+
+<figure markdown="span">
+![](./figure/ch2/BHT.png){width="400"}
+<figurecaption>Branch History Table</figurecaption>
+</figure>
+
+实际上是一个有限状态机的模式，根据前边的结果，预测后边的结果。
+
+我们有 ```1-bit predictor``` 和 ```2-bit predictor```。
+
+<figure markdown="span">
+![](./figure/ch2/2-bit.png){width="400"}
+<figurecaption>2-bit predictor</figurecaption>
+</figure>
+
+#### **Advanced Techniques for Instruction Delivery and Speculation**
+
+- Increasing Instruction Fetch Bandwidth
+    - Branch-Target Buffers
+
+<figure markdown="span">
+![](./figure/ch2/BTB.png){width="400"}
+<figurecaption>Branch-Target Buffers</figurecaption>
+</figure>
+
+类似于 TLB , 存放的是跳转的目标地址，如果跳转的分支指令在 BTB 中，就可以直接取出目标地址；如果不跳转的话，就直接把地址去掉。
+
+<figure markdown="span">
+![](./figure/ch2/BTB_cache.png){width="400"}
+</figure>
+
+- Specialized Branch Predictors: Predicting Procedure Returns, Indirect Jumps, and Loop Branches
+    - Integrated Instruction Fetch Units
+
+BTB Cache 的优势：
+
+- 更快地取指
+- 可以在分支目标处一次提供多个指令，在多处理器中很有用
+- branch folding: 可以在不延迟的情况下实现无条件跳转，或有条件跳转
+
+## **Schedule of Nonlinear Pipeline**
+
+Nonlinear pipeline: In addition to the serial connection, there is also a feedback loop in the pipeline.
+
+<figure markdown="span">
+![](./figure/ch2/non.png){width="400"}
+</figure>
+
+如上图中的非线性流水线，我们可以用一个表来表示元件的占用情况，其中横轴的数字表示拍数（第几拍），纵轴表示元件的编号。
+
+如何进行规划？
+
+- Initial Conflict Vertor: 初始冲突向量，二进制表示
+- Conflict Vector
+- State transition graph
+- Circular queue
+- Shortest average interval
+
+首先确定初始冲突向量
+
+<figure markdown="span">
+![](./figure/ch2/ICV.png){width="400"}
+</figure>
+
+表的结构与之前说的相同，我们需要做的就是如果第 $n$ 拍需要用到元件 $k$, 就在对应位置打勾。
+
+然后就是确定各个部件的冲突情况。从上图中可以看出，元件 1 在第 1 和 9 拍会产生冲突，中间隔了 8 拍。
+
+元件 2 在第 2，3，8 拍产生冲突，中间隔了 $3-2=1, 8-3=5, 8-2=6$ 拍。
+
+其他元件类似。所以我们就得到了总第间隔拍数$\{1, 5, 6, 8\}$。
+
+那么将对应二进制位（1，5，6，8）置为 1，得到冲突向量$10110001$(从右向左)。
+
+然后确定冲突向量
+
+<figure markdown="span">
+![](./figure/ch2/conflict_vec.png){width="400"}
+</figure>
+
+横轴的数字 2, 2, 7表示隔几拍进下一条指令，我们相应就把冲突向量右移 2, 2, 7 位，然后和本来的冲突向量或运算，得到新的冲突向量。
+
+这里纵轴的"1->" , "2->" 表示右移多少次。
+
+我们发现，循环调度 2-2-7 可以让冲突向量回到最初状态，说明我们找到了一个循环调度。
+
+<figure markdown="span">
+![](./figure/ch2/translation_graph.png)
+</figure>
