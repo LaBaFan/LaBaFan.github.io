@@ -251,3 +251,9 @@ nav:
             - L7.Template: notes/self_study/CS106L/Lecture7.md
             - L8.Functions and Algorithms: notes/self_study/CS106L/Lecture8.md
             - L9.STL Summary: notes/self_study/CS106L/Lecture9.md
+        - GAMES101 :
+          - 概述: notes/self_study/GAMES101/index.md
+          - L1.Overview of Computer Graphics: notes/self_study/GAMES101/L1.md
+          - L2.Preview of Linear Algebra: notes/self_study/GAMES101/L2.md
+          - L3.Transformation: notes/self_study/GAMES101/L3.md
+          - L4.Transformation Cont.: notes/self_study/GAMES101/L4.md

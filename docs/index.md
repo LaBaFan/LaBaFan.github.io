@@ -12,10 +12,11 @@ comments: true
 
 <font size = "4">**挖坑**</font>
 
-- [ ] 学习CSAPP(大工程)😇
-- [ ] 学习CS106L(基础部分差不多完结,OOP部分参见OOP课堂笔记)
+- [ ] 学习 CSAPP (大工程)😇
+- [ ] 学习 CS106L (基础部分差不多完结,OOP部分参见OOP课堂笔记)
 - [ ] 补全计组,ads笔记
+- [ ] 学习 GAMES101
 
 ---
 
-<font size="1">最后更新时间: 2025-03-24</font>
+<font size="1">最后更新时间: {{date}}</font>
