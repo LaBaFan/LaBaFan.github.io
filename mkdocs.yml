@@ -214,6 +214,7 @@ nav:
           - ch7-Relational Database Design: notes/class_notes/DB/ch7.md
           - ch12-Physical Stroage Systems: notes/class_notes/DB/ch12.md
           - ch13-Data Storage Structures: notes/class_notes/DB/ch13.md
+          - ch14-Indexing: notes/class_notes/DB/ch14.md
         - 计算机体系结构(CA):
           - 概述: notes/class_notes/CA/index.md
           - 计算机设计基础: notes/class_notes/CA/ch1.md
