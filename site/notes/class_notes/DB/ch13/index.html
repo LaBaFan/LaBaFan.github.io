@@ -18,7 +18,7 @@
         <link rel="prev" href="../ch12/">
       
       
-        <link rel="next" href="../../CA/">
+        <link rel="next" href="../ch14/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -669,6 +669,8 @@
       
         
       
+        
+      
     
     
       
@@ -1057,10 +1059,82 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#storage-access-buffer-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Access &amp; Buffer Manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage Access & Buffer Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lru-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      LRU Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffer-replacement-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer-Replacement Policies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clock-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clock Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#column-oriented-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Column-Oriented Storage
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ch14-Indexing
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1408,6 +1482,8 @@
       
         
       
+        
+      
     
     
       
@@ -1610,6 +1686,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#storage-access-buffer-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Access &amp; Buffer Manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage Access & Buffer Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lru-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      LRU Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffer-replacement-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer-Replacement Policies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clock-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clock Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#column-oriented-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Column-Oriented Storage
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1631,7 +1758,7 @@
 
 <h1 id="data-storage-structures"><strong>Data Storage Structures</strong><a class="headerlink" href="#data-storage-structures" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 886 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 11 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 3 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1341 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 16 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
 </div>
 <p>Outline:</p>
 <ul>
@@ -1785,6 +1912,65 @@
 <img alt="" src="../figure/ch13/relational_metadata.png" width="400" />
 <figurecaption>Relational Repersentation of System Metadata</figurecaption>
 </figure>
+<h2 id="storage-access-buffer-manager"><strong>Storage Access &amp; Buffer Manager</strong><a class="headerlink" href="#storage-access-buffer-manager" title="Permanent link">&para;</a></h2>
+<p><font color = blue>Blocks</font> are units of both storage allocation and data transfer.</p>
+<p><font color = blue>Buffer</font> - portion of main memory available to store copies of disk blocks.</p>
+<p><font color = blue>Buffer manager</font> - subsystem responsible for allocating buffer space in main memory.</p>
+<figure>
+<img alt="" src="../figure/ch13/buffer_manager.png" width="400" />
+<figurecaption>Buffer Manager</figurecaption>
+</figure>
+<h3 id="lru-strategy"><strong>LRU Strategy</strong><a class="headerlink" href="#lru-strategy" title="Permanent link">&para;</a></h3>
+<p>LRU 策略已经学过很多次了，基本思路是用一个栈或者队列来存储最近使用的块，最少使用的块会被替换掉。</p>
+<figure>
+<img alt="" src="../figure/ch13/lru.png" width="400" />
+<figurecaption>LRU Strategy</figurecaption>
+</figure>
+<p>Programs call on the buffer manager when they need a block from disk.</p>
+<ul>
+<li>If the block is already in the buffer, buffer manager returns the address of the block in main memory.</li>
+<li>If the block is not in the buffer, the buffer manager<ul>
+<li>Allocates space in the buffer for the block<ul>
+<li>Replacing(throwing out) some other block, if required, to make space for the new block</li>
+<li>Replaced block written back to disk only if it was modified since the most recent time that it was written to/refetched from the disk.</li>
+</ul>
+</li>
+<li>Reads the block from the disk to the buffer and returns the address of the block in main memory to requester.</li>
+</ul>
+</li>
+</ul>
+<figure>
+<img alt="" src="../figure/ch13/pinned.png" width="400" />
+</figure>
+<h3 id="buffer-replacement-policies"><strong>Buffer-Replacement Policies</strong><a class="headerlink" href="#buffer-replacement-policies" title="Permanent link">&para;</a></h3>
+<p><font color = blue>LRU strategy</font> - replace the block least recently used.</p>
+<p><font color = blue>Toss-immediate strategy</font> - frees the space occupied by a block as soon as the final tuple of that block has been processed.</p>
+<p><font color= blue>Most recently used(MRU) strategy</font> - system must pin the block currently begin processed. After the final tuple of that block has been processed, the block is unpinned, and it becomes the most recently used block.</p>
+<p>Buffer managers also support forced output of blocks for the purpose of recovery.</p>
+<h3 id="clock-algorithm"><strong>Clock Algorithm</strong><a class="headerlink" href="#clock-algorithm" title="Permanent link">&para;</a></h3>
+<figure>
+<img alt="" src="../figure/ch13/clock.png" width="400" />
+<figurecaption>Clock Algorithm</figurecaption>
+</figure>
+<p>Arrange block into a cycle, store one <code>reference_bit</code> per block.</p>
+<p>When <code>pin_count</code> reduces to 0, set <code>reference_bit = 1</code></p>
+<p><code>reference_bit</code> as the 2<sup>nd</sup> chance bit.</p>
+<p>把所有的块都放在一个环中，指针指向当前块。每次访问一个块的时候，如果这个块的标记位为 1，就把 1 设置为 0，然后指针指向下一个块。如果标记位为 0，就把这个块替换掉，指针指向下一个块。</p>
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">do</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">cycle</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">reference_bit</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">reference_bit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">referencen_bit</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">choose</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">replacement</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">}</span><span class="w"> </span><span class="n">until</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">chosen</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="column-oriented-storage"><strong>Column-Oriented Storage</strong><a class="headerlink" href="#column-oriented-storage" title="Permanent link">&para;</a></h2>
+<p>把一个记录的不同属性分开存储在不同的文件中。</p>
+<p>所有的属性都是按顺序存储的，如果想找到某个记录的某个属性，只需要找到文件中对应序列号的位置即可。</p>
+<figure>
+<img alt="" src="../figure/ch13/column.png" width="400" />
+<figurecaption>Column-Oriented Storage</figurecaption>
+</figure>
 
 
 
@@ -1807,7 +1993,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年4月20日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年4月22日</span>
   </span>
 
     
@@ -1917,13 +2103,13 @@
         
         
           
-          <a href="../../CA/" class="md-footer__link md-footer__link--next" aria-label="下一页: 概述" rel="next">
+          <a href="../ch14/" class="md-footer__link md-footer__link--next" aria-label="下一页: ch14-Indexing" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                概述
+                ch14-Indexing
               </div>
             </div>
             <div class="md-footer__button md-icon">
