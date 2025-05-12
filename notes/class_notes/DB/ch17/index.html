@@ -2106,10 +2106,10 @@
 <p>If <span class="arithmatex">\(T_10\)</span> falls, <span class="arithmatex">\(T_11\)</span> and <span class="arithmatex">\(T_12\)</span> must also be rolled back.</p>
 <h2 id="transaction-isolation-level"><strong>Transaction Isolation Level</strong><a class="headerlink" href="#transaction-isolation-level" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Serializable - default。 避免上述提到的四种问题，开销大。</li>
-<li>Repeatable read - only committed records to be read, repeated reads of same record must return same value. However, a transaction may not be serializable - it may find some records inserted by a transaction but not find others. 不管幽灵问题。</li>
-<li>Read committed - only committed records can be read, but successive reads of record may return different(but committed) values. 保证不读脏数据。</li>
-<li>Read uncommitted - even uncommitted records can be read. 最宽松的隔离级别，通常在做统计的时候用。</li>
+<li><font color = blue>Serializable</font> - default。 避免上述提到的四种问题，开销大。</li>
+<li><font color = blue>Repeatable read</font> - only committed records to be read, repeated reads of same record must return same value. However, a transaction may not be serializable - it may find some records inserted by a transaction but not find others. 不管幽灵问题。</li>
+<li><font color = blue>Read committed</font> - only committed records can be read, but successive reads of record may return different(but committed) values. 保证不读脏数据。</li>
+<li><font color = blue>Read uncommitted</font> - even uncommitted records can be read. 最宽松的隔离级别，通常在做统计的时候用。</li>
 </ul>
 <p>在数据库中，我们可以自己设定隔离等级。</p>
 <div class="language-SQL highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
