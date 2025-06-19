@@ -238,6 +238,7 @@ nav:
           - Streams: notes/class_notes/OOP/streams.md
           - Templates: notes/class_notes/OOP/templates.md
           - Iterators: notes/class_notes/OOP/iterators.md
+          - Exceptions: notes/class_notes/OOP/exceptions.md
       - 自学记录 :
         - 概述 : notes/self_study/index.md
         - CSAPP : 
