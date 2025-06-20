@@ -239,6 +239,8 @@ nav:
           - Templates: notes/class_notes/OOP/templates.md
           - Iterators: notes/class_notes/OOP/iterators.md
           - Exceptions: notes/class_notes/OOP/exceptions.md
+          - Smart Pointers: notes/class_notes/OOP/smart_pointers.md
+          - Miscellaneous Topics: notes/class_notes/OOP/miscellaneous_topics.md
       - 自学记录 :
         - 概述 : notes/self_study/index.md
         - CSAPP : 
