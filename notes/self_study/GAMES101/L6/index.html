@@ -18,6 +18,8 @@
         <link rel="prev" href="../L5/">
       
       
+        <link rel="next" href="../L7/">
+      
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
@@ -1065,6 +1067,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -1231,6 +1237,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    L6.Rasterization 2(Antialiasing and Z-buffering)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1241,6 +1258,175 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#antialiasing-idea-blurring-pre-filtering-before-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Antialiasing idea: Blurring(Pre-Filtering) Before Sampling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequency-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frequency Domain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frequency Domain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourier Transform
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering-getting-rid-of-certain-frequency-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering = Getting rid of certain frequency contents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtering = Getting rid of certain frequency contents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualizing-image-frequency-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizing Image Frequency Content
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering-convolution-averaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering = Convolution(= Averaging)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sampling-repeating-frequency-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sampling = Repeating Frequency Contents
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antialiasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Antialiasing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Antialiasing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-practical-pre-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Practical Pre-Filter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#antialiasing-by-supersampling-msaa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Antialiasing By Supersampling(MSAA)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L7.Shading 1(Illumination, Shading and Graphics Pipeline)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L8.Shading 2(Shading, Pipeline and Texture Mapping)
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1289,6 +1475,122 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#antialiasing-idea-blurring-pre-filtering-before-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Antialiasing idea: Blurring(Pre-Filtering) Before Sampling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequency-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frequency Domain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frequency Domain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourier Transform
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering-getting-rid-of-certain-frequency-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering = Getting rid of certain frequency contents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtering = Getting rid of certain frequency contents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualizing-image-frequency-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizing Image Frequency Content
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering-convolution-averaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering = Convolution(= Averaging)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sampling-repeating-frequency-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sampling = Repeating Frequency Contents
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antialiasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Antialiasing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Antialiasing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-practical-pre-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Practical Pre-Filter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#antialiasing-by-supersampling-msaa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Antialiasing By Supersampling(MSAA)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1308,7 +1610,125 @@
 
 <h1 id="rasterization-2-antialiasing-and-z-buffering"><strong>Rasterization 2(Antialiasing and Z-buffering)</strong><a class="headerlink" href="#rasterization-2-antialiasing-and-z-buffering" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 5 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间不到 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1498 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 12 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 5 分钟</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Outline</p>
+<ul>
+<li><font color = red>Antialiasing（抗锯齿/反走样）</font><ul>
+<li>Sampling theory</li>
+<li>Antialiasing in practice</li>
+</ul>
+</li>
+<li>Visibility / occlusion<ul>
+<li>Z-buffering</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>采样在计算机图形学中无处不在。，但是它也会带来很多问题(artifacts)，比如锯齿，摩尔纹等。</p>
+<figure>
+<img alt="" src="../figures/L6/fig1.png" width="width" /><figcaption>
+    <span>摩尔纹</span>
+</figcaption>
+</figure>
+<p>上图就是一个摩尔纹的例子，左边是原图，如果我们去掉原图中的奇数行和奇数列，但是图片的尺寸不变，那么就会出现摩尔纹。摩尔纹是由于采样率过低导致的。</p>
+<h2 id="antialiasing-idea-blurring-pre-filtering-before-sampling"><strong>Antialiasing idea: Blurring(Pre-Filtering) Before Sampling</strong><a class="headerlink" href="#antialiasing-idea-blurring-pre-filtering-before-sampling" title="Permanent link">&para;</a></h2>
+<p>在采样之前，可以先做一个模糊（滤波）处理。</p>
+<figure>
+<img alt="" src="../figures/L6/fig2.png" width="width" /><figcaption>
+    <span>模糊处理</span>
+</figcaption>
+</figure>
+<p>如图所示，在采样之前，我们加了一步模糊操作，当采样到三角形的边界时，像素点是粉红色而不是红色，这样就可以起到抗锯齿的效果。</p>
+<h2 id="frequency-domain"><strong>Frequency Domain</strong><a class="headerlink" href="#frequency-domain" title="Permanent link">&para;</a></h2>
+<p>定义 <span class="arithmatex">\(\cos{2\pi \mathrm{fx}}\)</span> 的频率为 <span class="arithmatex">\(f\)</span>，周期 <span class="arithmatex">\(T = \frac{1}{f}\)</span>。</p>
+<h3 id="fourier-transform"><strong>Fourier Transform</strong><a class="headerlink" href="#fourier-transform" title="Permanent link">&para;</a></h3>
+<p>傅立叶级数展开：我们可以用一系列正弦和余弦函数来表示一个周期函数。</p>
+<p>傅立叶级数展开与傅立叶变换是紧密相连的。任何一个函数，都可以分解为不同的频率。所谓傅立叶变换，其实就是把函数变成不同的频率的段，并且把不同的频率的段显示出来。</p>
+<div class="admonition example">
+<p class="admonition-title">Higher Frequencies Need Faster Sampling</p>
+<p><figure markdown = "span">
+<img alt="" src="../figures/L6/fig4.png" width="width" />
+</figure></p>
+<p>如图有五个函数，从上到下频率从低到高。假设我们用相同的采样频率来对五个函数进行采样，那么对于低频函数来说，可以看到我们基本可以采样到函数的形状。等到了第三个函数的时候，我们发现采样过后恢复的形状已经开始失真了，相差比较大。</p>
+<p>那么说明，高频的函数需要更高的采样频率才能够恢复出原来的形状。</p>
+</div>
+<p>考虑如下两个函数：</p>
+<figure>
+<img alt="" src="../figures/L6/fig5.png" width="width" />
+</figure>
+<p>上图有一个蓝色的函数和一个黑色的函数，如果我们用相同的采样方法去采样这两个函数，那么得到的图像是完全一样的（图中白色圆圈），这种现象就叫做“走样”。</p>
+<h3 id="filtering-getting-rid-of-certain-frequency-contents"><strong>Filtering = Getting rid of certain frequency contents</strong><a class="headerlink" href="#filtering-getting-rid-of-certain-frequency-contents" title="Permanent link">&para;</a></h3>
+<h4 id="visualizing-image-frequency-content"><strong>Visualizing Image Frequency Content</strong><a class="headerlink" href="#visualizing-image-frequency-content" title="Permanent link">&para;</a></h4>
+<p>傅立叶变换可以把图像从“时域”变到“频域”</p>
+<figure>
+<img alt="" src="../figures/L6/fig6.png" width="width" />
+</figure>
+<p>左图是原图，我们通过傅立叶变换得到右图的频域图。对于频域图，我们把中心定义为最低频的区域，周围定义为高频的区域，从中心到周围，频率越来越高。然后我们通过亮度表示有多少信息集中在某个频率上，亮度越高，说明这个频率上包含的信息越多。</p>
+<p>自然界中大多数图片都是低频信息比较多，高频信息比较少。高频信息对应边界，高通滤波器过滤图片之后，就只剩下边界了;低通滤波器会过滤掉边界，图片会变模糊。</p>
+<figure>
+<img alt="" src="../figures/L6/fig7.png" width="width" />
+<figurecaption>High-pass filter</figurecaption>
+</figure>
+<figure>
+<img alt="" src="../figures/L6/fig8.png" width="width" />
+<figurecaption>Low-pass filter</figurecaption>
+</figure>
+<h4 id="filtering-convolution-averaging"><strong>Filtering = Convolution(= Averaging)</strong><a class="headerlink" href="#filtering-convolution-averaging" title="Permanent link">&para;</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Convolution Theorem</p>
+<p>时域上，如果想对两个信号进行卷积，对应到频域上，实际上就是两个信号的乘积；如果在时域上是乘积，那么对应到频域上就是卷积。</p>
+<p><figure markdown = "span">
+<img alt="" src="../figures/L6/fig9.png" width="400" />
+</figure></p>
+</div>
+<h4 id="sampling-repeating-frequency-contents"><strong>Sampling = Repeating Frequency Contents</strong><a class="headerlink" href="#sampling-repeating-frequency-contents" title="Permanent link">&para;</a></h4>
+<p>下图左边分别代表原函数，采样函数，采样后的函数；右边代表它们对应的频谱。</p>
+<figure>
+<img alt="" src="../figures/L6/fig10.png" width="400" />
+</figure>
+<p>通过观察可以发现：采样实际上就是对原图像频谱的周期性重复。</p>
+<p>如此我们就可以通过频谱分析“走样”这一现象了。走样实际上就是在周期性重复的过程中，图像的频谱之间发生了重合（混叠）。</p>
+<figure>
+<img alt="" src="../figures/L6/fig11.png" width="400" />
+</figure>
+<h2 id="antialiasing"><strong>Antialiasing</strong><a class="headerlink" href="#antialiasing" title="Permanent link">&para;</a></h2>
+<p>反走样有几种做法：</p>
+<ol>
+<li>增加采样率，但是开销很大；</li>
+<li>反走样，先模糊，再采样（先把信号高频信息拿掉，然后做反走样）；</li>
+</ol>
+<figure>
+<img alt="" src="../figures/L6/fig12.png" width="400" />
+</figure>
+<p>如图我们砍掉了高频部分，然后再以原本的采样率进行采样，这样就可以避免走样现象（砍掉了重叠部分）。</p>
+<h3 id="a-practical-pre-filter"><strong>A Practical Pre-Filter</strong><a class="headerlink" href="#a-practical-pre-filter" title="Permanent link">&para;</a></h3>
+<p>在实际操作中，我们需要通过某种办法让图片变模糊，然后才可以采样。我们通常采用的是用一定大小的低通滤波器，对图片进行卷积操作，从而得到模糊后的图像。</p>
+<p>在对三角形采样的时候，我们会计算三角形覆盖了这个像素的多少，然后把像素块变成对应比例的颜色。</p>
+<figure>
+<img alt="" src="../figures/L6/fig13.png" width="400" />
+</figure>
+<h3 id="antialiasing-by-supersampling-msaa"><strong>Antialiasing By Supersampling(MSAA)</strong><a class="headerlink" href="#antialiasing-by-supersampling-msaa" title="Permanent link">&para;</a></h3>
+<p>在实际操作中，上边这种办法太麻烦了，所以人们就研究出了一种方法对反走样近似（它并不能解决反走样的问题）。</p>
+<p>操作方法：对于一个大的像素点，我们把它划分成很多小像素点，然后判断小像素点中心点是不是在三角形内，最后把像素点平均起来，就得到了一个近似覆盖率。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>注意，MSAA 并不是通过提高分辨率来直接解决走样问题，只是为了近似得到一个合理的覆盖率而已，并不是真正提高了分辨率。MSAA 实际上近似的是“模糊”过程。</p>
+</div>
+<p>但是 MSAA 并不是没有代价的，MSAA 通过更多的点来得到抗锯齿的效果，那么一个显而易见的代价就是增加了计算量。</p>
+<p>其他抗锯齿方案：</p>
+<ul>
+<li>FXAA(Fast Approximate AA)：得到一副有锯齿的图，然后通过一些图像匹配的方法找到锯齿的边界，再换成没有锯齿的边界，速度非常快。</li>
+<li>TAA(Temporal AA)：基于时间的抗锯齿方法，利用前一帧的像素信息来平滑当前帧的像素，效果较好，但可能会引入模糊。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Super resolution(超分辨率)</p>
+<ul>
+<li>From low resolution to high resolution</li>
+<li>Essentially still "not enough samples" problem</li>
+<li>DLSS(Deep Learning Super Sampling)</li>
+</ul>
 </div>
 
 
@@ -1440,6 +1860,21 @@
             </div>
           </a>
         
+        
+          
+          <a href="../L7/" class="md-footer__link md-footer__link--next" aria-label="下一页: L7.Shading 1(Illumination, Shading and Graphics Pipeline)" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  下一页
+                </span>
+                L7.Shading 1(Illumination, Shading and Graphics Pipeline)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
