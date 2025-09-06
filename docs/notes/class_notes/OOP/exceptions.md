@@ -43,6 +43,7 @@ public:
     int length() { return m_size; }
     T& operator[](int idx);     // How to implement?
 }
+```
 
 我们有一个 ```Vector``` 类，它有一个成员函数 ```operator[]```，我们想要实现一个类似于数组的下标操作符。
 

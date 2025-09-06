@@ -279,3 +279,6 @@ nav:
           - L4.Transformation Cont.: notes/self_study/GAMES101/L4.md
           - L5.Rasterization 1(Triangles): notes/self_study/GAMES101/L5.md
           - L6.Rasterization 2(Antialiasing and Z-buffering): notes/self_study/GAMES101/L6.md
+          - L7.Shading 1(Illumination, Shading and Graphics Pipeline): notes/self_study/GAMES101/L7.md
+          - L8.Shading 2(Shading, Pipeline and Texture Mapping): notes/self_study/GAMES101/L8.md
+          - L9.Shading 3(Texture Mapping Cont.): notes/self_study/GAMES101/L9.md
