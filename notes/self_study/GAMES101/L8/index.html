@@ -18,6 +18,8 @@
         <link rel="prev" href="../L7/">
       
       
+        <link rel="next" href="../L9/">
+      
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
@@ -1069,6 +1071,8 @@
       
         
       
+        
+      
     
     
       
@@ -1277,6 +1281,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    L8.Shading 2(Shading, Pipeline and Texture Mapping)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1287,6 +1302,100 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#specular-term-blinn-phong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specular Term(Blinn-Phong)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ambient-term-blinn-phong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ambient Term(Blinn-Phong)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blinn-phong-reflectance-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blinn-Phong Reflectance Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shading-frequencies-zhao-se-pin-lu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shading Frequencies（着色频率）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphics-pipeline-tu-xing-guan-xian" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphics Pipeline（图形管线）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#texture-mapping-wen-li-ying-she" class="md-nav__link">
+    <span class="md-ellipsis">
+      Texture Mapping（纹理映射）
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L9.Shading 3(Texture Mapping Cont.)
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1335,6 +1444,68 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#specular-term-blinn-phong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specular Term(Blinn-Phong)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ambient-term-blinn-phong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ambient Term(Blinn-Phong)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blinn-phong-reflectance-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blinn-Phong Reflectance Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shading-frequencies-zhao-se-pin-lu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shading Frequencies（着色频率）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphics-pipeline-tu-xing-guan-xian" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphics Pipeline（图形管线）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#texture-mapping-wen-li-ying-she" class="md-nav__link">
+    <span class="md-ellipsis">
+      Texture Mapping（纹理映射）
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1354,8 +1525,83 @@
 
 <h1 id="shading-2-shading-pipeline-and-texture-mapping"><strong>Shading 2(Shading, Pipeline and Texture Mapping)</strong><a class="headerlink" href="#shading-2-shading-pipeline-and-texture-mapping" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 7 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间不到 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1316 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Outline</p>
+<ul>
+<li>Shading 2<ul>
+<li>Blinn-Phong reflectance model<ul>
+<li>Specular and ambient terms</li>
+</ul>
+</li>
+<li>Shading frequencies</li>
+<li>Graphics pipeline</li>
+<li>Texture mapping</li>
+<li>Barycentric coordinates</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="specular-term-blinn-phong"><strong>Specular Term(Blinn-Phong)</strong><a class="headerlink" href="#specular-term-blinn-phong" title="Permanent link">&para;</a></h2>
+<p>上节课我们说过了漫反射与光源方向，观察方向之间的关系，这节课我们会把高光项加入进去。高光一般出现在比较光滑的物体的反射上，很接近于镜面反射，所以它的出射角也比较接近入射角，并且只有当观察方向和镜面反射方向接近的时候，才能看到高光。</p>
+<p>但是布林-冯观察到了一个很巧妙的现象：当观察方向和反射方向很接近的时候，也就说明法线和<strong>半程向量</strong>很接近。所谓半程向量就是光源入射方向和观察方向的角平分线。</p>
+<figure>
+<img alt="" src="../figures/L8/fig1.png" width="400" />
+</figure>
+<p>图中的 <span class="arithmatex">\(\vec{h}\)</span> 就是半程向量，根据平行四边形法则，我们只要把 <span class="arithmatex">\(\vec{l}\)</span> 和 <span class="arithmatex">\(\vec{v}\)</span> 加起来，再做归一化，就得到了角平分线，也就是半程向量 <span class="arithmatex">\(\vec{h}\)</span>。所以为了衡量我能不能看到高光，只要看半程向量和法线是不是接近就可以了。</p>
+<p>所以我们有公式来计算高光：</p>
+<div class="arithmatex">\[
+L_s = k_s(I / r^2) \max{0, \vec{n} \cdot \vec{h}}^P \notag
+\]</div>
+<p><span class="arithmatex">\(k_s\)</span> 是镜面反射系数，通常认为是 1.这里还引入了一个指数 <span class="arithmatex">\(P\)</span>，因为 <span class="arithmatex">\(\cos\alpha\)</span> 虽然确实能反映两个方向是否足够接近，但是它的容忍度太高了，我们希望只有当两个方向非常接近的时候，才能看到高光，所以我们把 <span class="arithmatex">\(\cos\alpha\)</span> 做了一个幂运算，指数越大，容忍度越低，只有当两个方向非常接近的时候，<span class="arithmatex">\(\cos\alpha\)</span> 才能接近 1，从而看到高光。正常情况下取 <span class="arithmatex">\(P\)</span> 在 100 到 200 之间。</p>
+<figure>
+<img alt="" src="../figures/L8/fig2.png" width="400" />
+<figurecaption>余弦函数的容忍度</figurecaption>
+</figure>
+<h2 id="ambient-term-blinn-phong"><strong>Ambient Term(Blinn-Phong)</strong><a class="headerlink" href="#ambient-term-blinn-phong" title="Permanent link">&para;</a></h2>
+<p>我们认为，任何一个点接收到来自环境的光都是相同的，环境光强度为 <span class="arithmatex">\(I_a\)</span>，环境光的反射系数为 <span class="arithmatex">\(k_a\)</span>，所以环境光的亮度为：</p>
+<div class="arithmatex">\[
+L_a = k_a I_a \notag
+\]</div>
+<h2 id="blinn-phong-reflectance-model"><strong>Blinn-Phong Reflectance Model</strong><a class="headerlink" href="#blinn-phong-reflectance-model" title="Permanent link">&para;</a></h2>
+<p>把前面提到的所有项（环境光，漫反射，高光）加起来，我们就得到了布林-冯反射模型：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+L &amp;= L_a + L_d + L_s \\
+&amp;= k_a I_a + k_d (I / r^2) \max{0, \vec{n} \cdot \vec{l}} + k_s (I / r^2) \max{0, \vec{n} \cdot \vec{h}}^P
+\end{aligned}
+\]</div>
+<p>这时候我们已经可以找到一个点它的着色情况了，下一步就是找到整个物体是什么情况。</p>
+<h2 id="shading-frequencies-zhao-se-pin-lu"><strong>Shading Frequencies（着色频率）</strong><a class="headerlink" href="#shading-frequencies-zhao-se-pin-lu" title="Permanent link">&para;</a></h2>
+<p>着色频率可以理解为着色的点的个数，我们可以对一个面着色，也可以对一个点着色。显然对一个点着色更为精细，但是计算量也更大。</p>
+<ul>
+<li>Flat Shading（面着色）：对一个面，求它的法线，然后用这个法线去计算这个面的颜色。这样的话，整个面都是一个颜色，看起来会比较生硬。</li>
+<li>Gouraud Shading（顶点着色）：对一个面的三个顶点分别求法线，然后用这个法线去计算这个顶点的颜色，最后对这个面的颜色进行插值。这样的话，面内的颜色会比较平滑，但是高光可能会丢失，因为高光可能出现在面内，而不在顶点上。</li>
+<li>Phong Shading（像素着色）：对一个面的三个顶点分别求法线，然后对这个面的每一个像素点，插值出它的法线，再用这个法线去计算这个像素点的颜色。这样的话，面内的颜色会非常平滑，并且高光也不会丢失，但是计算量也最大。</li>
+</ul>
+<p>并不是说面着色就不好，当几何体特别复杂，有很多很小的面的时候，面着色反而会更好，因为它的计算量小。</p>
+<p>除了面着色之外，其他两种着色方法都需要求出顶点的法线，对于一个顶点来说，它肯定会和很多个三角形相连，所以它的法线可以通过这些三角形的法线求平均得到（简单平均和加权平均都可以，权重是三角形的面积）。</p>
+<figure>
+<img alt="" src="../figures/L8/fig3.png" width="400" />
+</figure>
+<div class="arithmatex">\[
+N_v = \frac{\sum_i N_i}{||\sum_i N_i||} \notag
+\]</div>
+<p>我们已经能够求出顶点的法线了，接下来就是如何求出插值的法线，这个需要用到重心坐标。</p>
+<h2 id="graphics-pipeline-tu-xing-guan-xian"><strong>Graphics Pipeline（图形管线）</strong><a class="headerlink" href="#graphics-pipeline-tu-xing-guan-xian" title="Permanent link">&para;</a></h2>
+<figure>
+<img alt="" src="../figures/L8/fig4.png" width="600" />
+<figurecaption>图形管线</figurecaption>
+</figure>
+<h2 id="texture-mapping-wen-li-ying-she"><strong>Texture Mapping（纹理映射）</strong><a class="headerlink" href="#texture-mapping-wen-li-ying-she" title="Permanent link">&para;</a></h2>
+<p>我们希望在物体的不同位置定义不同的材质属性，比如说一个物体的某个部分是金属的，某个部分是塑料的，这时候我们就需要用到纹理映射。</p>
+<p>我们定义纹理是一张图（平面），我们可以把纹理覆盖在物体的表面上，这样物体的不同位置就可以有不同的材质属性了，这个就叫纹理映射。</p>
+<p>为了表示纹理上的一个点，我们引入了纹理坐标 <span class="arithmatex">\((u, v)\)</span>，它的取值范围是 <span class="arithmatex">\([0, 1]\)</span>，<span class="arithmatex">\((0, 0)\)</span> 表示纹理的左下角，<span class="arithmatex">\((1, 1)\)</span> 表示纹理的右上角。</p>
+<figure>
+<img alt="" src="../figures/L8/fig5.png" width="400" />
+<figurecaption>纹理坐标</figurecaption>
+</figure>
 
 
 
@@ -1378,7 +1624,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年8月18日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年9月6日</span>
   </span>
 
     
@@ -1388,7 +1634,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年8月18日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年9月6日</span>
   </span>
 
     
@@ -1486,6 +1732,21 @@
             </div>
           </a>
         
+        
+          
+          <a href="../L9/" class="md-footer__link md-footer__link--next" aria-label="下一页: L9.Shading 3(Texture Mapping Cont.)" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  下一页
+                </span>
+                L9.Shading 3(Texture Mapping Cont.)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
