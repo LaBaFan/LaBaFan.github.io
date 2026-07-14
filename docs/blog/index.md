@@ -1,3 +1,0 @@
-# Blog
-
-Hello, world!
