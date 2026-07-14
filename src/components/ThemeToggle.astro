@@ -1,0 +1,22 @@
+<script is:inline>
+  (() => {
+    const storageKey = 'asteroid-theme';
+    const root = document.documentElement;
+    const saved = localStorage.getItem(storageKey);
+    if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+    const updateLabel = (button) => {
+      const dark = root.dataset.theme === 'dark' || (!root.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+      button.setAttribute('aria-label', dark ? '切换为浅色模式' : '切换为深色模式');
+      button.title = button.getAttribute('aria-label');
+    };
+    document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+      updateLabel(button);
+      button.addEventListener('click', () => {
+        const isDark = root.dataset.theme === 'dark' || (!root.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+        root.dataset.theme = isDark ? 'light' : 'dark';
+        localStorage.setItem(storageKey, root.dataset.theme);
+        updateLabel(button);
+      });
+    });
+  })();
+</script>

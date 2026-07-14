@@ -1,0 +1,43 @@
+@import './tokens.css';
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--paper); }
+body {
+  min-width: 20rem;
+  margin: 0;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image: radial-gradient(rgba(8, 124, 118, 0.07) 0.55px, transparent 0.55px);
+  background-size: 9px 9px;
+  font-family: var(--body);
+  font-size: 18px;
+  line-height: 1.8;
+  text-rendering: optimizeLegibility;
+}
+a { color: var(--accent-deep); text-decoration-color: color-mix(in srgb, currentColor 38%, transparent); text-underline-offset: 0.16em; }
+a:hover { color: var(--accent); text-decoration-thickness: 0.12em; }
+img { display: block; max-width: 100%; height: auto; }
+button, input { font: inherit; }
+::selection { color: var(--paper); background: var(--accent); }
+:focus-visible { outline: 3px solid var(--moon); outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; z-index: 100; top: 0.75rem; left: 0.75rem; padding: 0.45rem 0.8rem; color: var(--paper); background: var(--ink); transform: translateY(-150%); }
+.skip-link:focus { transform: translateY(0); }
+
+.site-shell { min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto; }
+.site-main { width: min(100% - 2rem, 92rem); margin: 0 auto; }
+.site-footer { width: min(100% - 2rem, 92rem); margin: 4rem auto 0; padding: 1.3rem 0 2.1rem; border-top: 1px solid var(--line); color: var(--ink-soft); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.02em; }
+
+.eyebrow { display: flex; gap: 0.55rem; align-items: center; margin: 0 0 0.8rem; color: var(--accent-deep); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.eyebrow::before { width: 1.1rem; height: 1px; content: ''; background: currentColor; }
+.page-intro { max-width: 40rem; margin: 3.8rem auto 2.5rem; }
+.page-intro h1 { margin: 0; font: 700 clamp(2.2rem, 6vw, 4.2rem)/1.08 var(--serif); letter-spacing: -0.06em; }
+.page-intro p:last-child { max-width: 34rem; color: var(--ink-soft); }
+.page-section { margin-top: 3.6rem; }
+.page-section > h2 { margin: 0 0 1.1rem; font: 700 1.25rem/1.35 var(--serif); }
+
+@media (max-width: 44rem) {
+  body { font-size: 17px; }
+  .site-main { width: min(100% - 1.5rem, 92rem); }
+  .page-intro { margin: 2.5rem auto 2rem; }
+}

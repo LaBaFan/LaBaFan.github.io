@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { NAVIGATION, type NavItem } from '../../config/navigation';
+import { getNoteTitle, noteHref } from '../../utils/content';
+
+const notes = (await getCollection('notes', ({ data }) => !data.draft))
+  .filter((note) => (note.data.slug ?? note.id).startsWith('class_notes/'));
+
+const navigationRoot = NAVIGATION[0];
+const collections = navigationRoot?.children ?? [];
+
+function navigationSlug(href: string): string {
+  return href.replace(/^\/notes\/?|\/$/g, '');
+}
+
+function navigationOrder(item: NavItem, order = new Map<string, number>(), position = { value: 0 }) {
+  const slug = navigationSlug(item.href);
+  if (!order.has(slug)) order.set(slug, position.value++);
+
+  for (const child of item.children ?? []) {
+    navigationOrder(child, order, position);
+  }
+
+  return order;
+}
+
+const noteOrder = navigationOrder(navigationRoot);
+
+function isInSubject(note: (typeof notes)[number], subjectSlug: string): boolean {
+  const slug = note.data.slug ?? note.id;
+  return slug === subjectSlug || slug.startsWith(`${subjectSlug}/`);
+}
+
+function subjectNoteOrder(left: (typeof notes)[number], right: (typeof notes)[number]): number {
+  const leftSlug = left.data.slug ?? left.id;
+  const rightSlug = right.data.slug ?? right.id;
+  const leftOrder = noteOrder.get(leftSlug) ?? Number.MAX_SAFE_INTEGER;
+  const rightOrder = noteOrder.get(rightSlug) ?? Number.MAX_SAFE_INTEGER;
+  return leftOrder - rightOrder || leftSlug.localeCompare(rightSlug, 'zh-CN');
+}
+
+const noteGroups = collections.map((collection) => ({
+  title: collection.title,
+  id: navigationSlug(collection.href).replaceAll('/', '-'),
+  subjects: (collection.children ?? []).map((subject) => {
+    const slug = navigationSlug(subject.href);
+    const subjectNotes = notes.filter((note) => isInSubject(note, slug));
+    const overview = subjectNotes.find((note) => (note.data.slug ?? note.id) === slug);
+    const chapters = subjectNotes
+      .filter((note) => note !== overview && !note.id.endsWith('/index'))
+      .sort(subjectNoteOrder);
+
+    return { title: subject.title, id: slug.replaceAll('/', '-'), overview, chapters };
+  }).filter((subject) => subject.overview || subject.chapters.length > 0),
+})).filter((group) => group.subjects.length > 0);
+---
+
+<BaseLayout title="课程笔记" description="按科目与章节整理的课程笔记地图。" currentPath="/notes/">
+  <section class="page-intro">
+    <p class="eyebrow">Note atlas</p>
+    <h1>笔记地图</h1>
+    <p>从一门课开始，再沿着章节逐步阅读。内容按课程科目归档，而不是按更新时间铺开。</p>
+  </section>
+
+  <div class="subject-collections">
+    {noteGroups.map((group, groupIndex) => <section class="subject-collection page-section" aria-labelledby={`group-${group.id}`}>
+      <header class="subject-collection-header">
+        <p class="eyebrow">课程笔记</p>
+        <h2 id={`group-${group.id}`}>{group.title}</h2>
+      </header>
+
+      <div class="subject-tree">
+        {group.subjects.map((subject, subjectIndex) => <details class="subject-branch" open={groupIndex === 0 && subjectIndex === 0}>
+          <summary aria-labelledby={`subject-${subject.id}`}>
+            <span class="subject-branch-marker" aria-hidden="true">科目</span>
+            <span class="subject-branch-title" id={`subject-${subject.id}`}>{subject.title}</span>
+            <span class="subject-branch-meta">{subject.chapters.length} 章</span>
+            {subject.overview && <a class="subject-overview" href={noteHref(subject.overview.data.slug ?? subject.overview.id)}>
+              <span>课程概述</span><span aria-hidden="true">↗</span>
+            </a>}
+          </summary>
+
+          <div class="subject-branch-content">
+            {subject.chapters.length > 0 ? <ol class="chapter-list" aria-label={`${subject.title}章节`}>
+              {subject.chapters.map((note) => <li>
+                <a href={noteHref(note.data.slug ?? note.id)}>
+                  <span>{note.id.endsWith('/index') ? '概述' : getNoteTitle(note)}</span><span aria-hidden="true">→</span>
+                </a>
+              </li>)}
+            </ol> : <p class="subject-empty">该科目暂未整理章节。</p>}
+          </div>
+        </details>)}
+      </div>
+    </section>)}
+  </div>
+</BaseLayout>

@@ -1,0 +1,12 @@
+---
+interface Props { enabled?: boolean; term?: string; }
+const { enabled = false, term = 'pathname' } = Astro.props;
+const repo = import.meta.env.PUBLIC_GISCUS_REPO;
+const repoId = import.meta.env.PUBLIC_GISCUS_REPO_ID;
+const category = import.meta.env.PUBLIC_GISCUS_CATEGORY;
+const categoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID;
+---
+{enabled && repo && repoId && category && categoryId && <section class="page-section" aria-label="评论">
+  <div class="orbit-rule" aria-hidden="true"></div>
+  <script is:inline src="https://giscus.app/client.js" data-repo={repo} data-repo-id={repoId} data-category={category} data-category-id={categoryId} data-mapping="specific" data-term={term} data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async></script>
+</section>}

@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+import '../styles/components.css';
+import 'katex/dist/katex.min.css';
+import Header from '../components/Header.astro';
+import Search from '../components/Search.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+
+interface Props { title?: string; description?: string; currentPath?: string; }
+const { title = '小行星学术札记', description = '课程笔记与自学记录。', currentPath = Astro.url.pathname } = Astro.props;
+const fullTitle = title === '小行星学术札记' ? title : `${title} · 小行星学术札记`;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#102432" />
+    <title>{fullTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳至正文</a>
+    <div class="site-shell">
+      <Header currentPath={currentPath} />
+      <main id="main-content" class="site-main"><slot /></main>
+      <footer class="site-footer">ASTEROID FIELD NOTES · 以好奇心校准轨道</footer>
+    </div>
+    <Search />
+    <ThemeToggle />
+  </body>
+</html>

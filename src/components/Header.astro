@@ -1,0 +1,30 @@
+---
+interface Props { currentPath?: string; }
+const { currentPath = '/' } = Astro.props;
+const links = [
+  { href: '/', label: '首页' },
+  { href: '/notes/', label: '笔记' },
+  { href: '/about/', label: '关于' },
+  { href: '/blog/', label: '随记' }
+];
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="小行星学术札记首页">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span class="brand-text">小行星学术札记</span>
+    </a>
+    <nav class="header-nav" aria-label="主导航">
+      {links.map((link) => <a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}>{link.label}</a>)}
+    </nav>
+    <details class="mobile-site-nav">
+      <summary aria-label="打开主导航">菜单</summary>
+      <nav aria-label="移动端主导航">{links.map((link) => <a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}>{link.label}</a>)}</nav>
+    </details>
+    <div class="header-actions">
+      <button class="icon-button" type="button" data-search-open aria-label="搜索笔记" title="搜索笔记">⌕</button>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换深浅色模式" title="切换深浅色模式">◐</button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,5 @@
+---
+interface Props { updatedAt?: Date; }
+const { updatedAt } = Astro.props;
+---
+{updatedAt && <p class="note-meta"><time datetime={updatedAt.toISOString()}>{updatedAt.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })} 更新</time></p>}

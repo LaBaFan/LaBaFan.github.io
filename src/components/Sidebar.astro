@@ -1,0 +1,33 @@
+---
+import type { NavItem } from '../config/navigation';
+
+interface Props { items: readonly NavItem[]; currentPath?: string; }
+const { items, currentPath = '/' } = Astro.props;
+const labelOf = (item: NavItem) => item.title;
+---
+
+<aside class="sidebar" aria-label="笔记导航">
+  <button class="sidebar-toggle" type="button" aria-expanded="false" aria-controls="note-navigation">笔记导航</button>
+  <p class="sidebar-heading">笔记导航</p>
+  <ul id="note-navigation" hidden>
+    {items.map((item) => <li>
+      <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{labelOf(item)}</a>
+      {item.children?.length ? <ul>
+        {item.children.map((child) => <li>
+          <a href={child.href} aria-current={currentPath === child.href ? 'page' : undefined}>{labelOf(child)}</a>
+          {child.children?.length ? <ul>{child.children.map((grandchild) => <li><a href={grandchild.href} aria-current={currentPath === grandchild.href ? 'page' : undefined}>{labelOf(grandchild)}</a></li>)}</ul> : null}
+        </li>)}
+      </ul> : null}
+    </li>)}
+  </ul>
+</aside>
+
+<script is:inline>
+  document.querySelectorAll('.sidebar-toggle').forEach((button) => {
+    const menu = document.getElementById(button.getAttribute('aria-controls'));
+    const desktop = matchMedia('(min-width: 52.01rem)');
+    const sync = () => { menu.hidden = !desktop.matches && button.getAttribute('aria-expanded') !== 'true'; };
+    button.addEventListener('click', () => { button.setAttribute('aria-expanded', String(button.getAttribute('aria-expanded') !== 'true')); sync(); });
+    desktop.addEventListener('change', sync); sync();
+  });
+</script>

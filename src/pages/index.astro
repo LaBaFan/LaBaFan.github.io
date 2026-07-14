@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getNoteTitle, noteHref, sortNotesByUpdatedAt } from '../utils/content';
+
+const notes = sortNotesByUpdatedAt(
+  (await getCollection('notes', ({ data }) => !data.draft))
+    .filter((note) => (note.data.slug ?? note.id).startsWith('class_notes/')),
+).slice(0, 8);
+---
+
+<BaseLayout title="小行星学术札记" description="按课程整理的学习笔记。" currentPath="/">
+  <section class="home-hero" aria-labelledby="home-title">
+    <div>
+      <p class="eyebrow">Orbital notebook / 2024 —</p>
+      <h1 id="home-title" class="home-title">沿着好奇心，记录知识的轨道。</h1>
+      <p class="home-lede">一处用于沉淀课程笔记、沿着课堂脉络回顾与延展知识的个人观测站。</p>
+    </div>
+    <div class="home-orbit" aria-hidden="true"><span>knowledge<br />is a constellation<br />of patient notes</span></div>
+  </section>
+
+  <section class="page-section" aria-labelledby="entry-title">
+    <p class="eyebrow">Begin here</p>
+    <h2 id="entry-title">进入观测区</h2>
+    <div class="entry-grid entry-grid--single">
+      <a class="entry-card" href="/notes/"><h2>课程笔记</h2><p>从数据结构、体系结构到物理与数据库，按学习脉络逐步展开。</p></a>
+    </div>
+  </section>
+
+  {notes.length > 0 && <section class="page-section" aria-labelledby="recent-title">
+    <p class="eyebrow">Latest signals</p>
+    <h2 id="recent-title">最近整理</h2>
+    <ul class="note-list">
+      {notes.map((note) => <li><a href={noteHref(note.data.slug ?? note.id)}>
+        <time datetime={note.data.updatedAt?.toISOString()}>{note.data.updatedAt ? note.data.updatedAt.toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' }) : 'NOTE'}</time>
+        <strong>{getNoteTitle(note)}</strong><small>↗</small>
+      </a></li>)}
+    </ul>
+  </section>}
+</BaseLayout>

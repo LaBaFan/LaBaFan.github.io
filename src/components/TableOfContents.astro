@@ -1,0 +1,13 @@
+---
+interface Heading { depth: number; slug: string; text: string; }
+interface Props { headings: Heading[]; }
+const { headings } = Astro.props;
+const visibleHeadings = headings.filter((heading) => heading.depth >= 2 && heading.depth <= 3);
+---
+
+{visibleHeadings.length > 0 && <details class="note-toc" open>
+  <summary>本页航标</summary>
+  <ul>
+    {visibleHeadings.map((heading) => <li class={`depth-${heading.depth}`}><a href={`#${heading.slug}`}>{heading.text}</a></li>)}
+  </ul>
+</details>}

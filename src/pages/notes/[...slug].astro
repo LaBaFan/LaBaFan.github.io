@@ -1,0 +1,29 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import NoteLayout from '../../layouts/NoteLayout.astro';
+import { getAdjacentNotes, getNoteTitle, noteHref, normalizeSlug, sortNotesByUpdatedAt } from '../../utils/content';
+
+type Note = CollectionEntry<'notes'>;
+const canonicalSlug = (note: Note) => note.data.slug ?? note.id;
+const isClassNote = (note: Note) => normalizeSlug(canonicalSlug(note)).startsWith('class_notes/');
+const notes = sortNotesByUpdatedAt(
+  (await getCollection('notes', ({ data }) => !data.draft)).filter(isClassNote),
+);
+
+export async function getStaticPaths() {
+  const allNotes = await getCollection('notes', ({ data }) => !data.draft);
+  return allNotes
+    .filter((note) => normalizeSlug(note.data.slug ?? note.id).startsWith('class_notes/'))
+    .map((note) => ({ params: { slug: normalizeSlug(note.data.slug ?? note.id) }, props: { note } }));
+}
+
+const { note } = Astro.props as { note: Note };
+const { Content, headings } = await render(note);
+const { previous, next } = getAdjacentNotes(notes, note.id);
+const title = getNoteTitle(note);
+const description = note.data.description;
+---
+
+<NoteLayout title={title} description={description} headings={headings} updatedAt={note.data.updatedAt} previous={previous ? { title: getNoteTitle(previous), href: noteHref(canonicalSlug(previous)) } : undefined} next={next ? { title: getNoteTitle(next), href: noteHref(canonicalSlug(next)) } : undefined} currentPath={noteHref(canonicalSlug(note))} comments={note.data.comments}>
+  <Content />
+</NoteLayout>

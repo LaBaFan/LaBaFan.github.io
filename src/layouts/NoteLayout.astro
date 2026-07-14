@@ -1,0 +1,35 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import NoteMeta from '../components/NoteMeta.astro';
+import PrevNext from '../components/PrevNext.astro';
+import Comments from '../components/Comments.astro';
+import { NAVIGATION } from '../config/navigation';
+
+interface Heading { depth: number; slug: string; text: string; }
+interface Neighbor { title: string; href: string; }
+interface Props {
+  title: string; description?: string; headings: Heading[]; updatedAt?: Date;
+  previous?: Neighbor; next?: Neighbor; currentPath?: string; comments?: boolean;
+}
+const { title, description, headings, updatedAt, previous, next, currentPath = Astro.url.pathname, comments = false } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} currentPath={currentPath}>
+  <div class="note-grid">
+    <Sidebar items={NAVIGATION} currentPath={currentPath} />
+    <article class="note-article">
+      <header class="note-header">
+        <p class="eyebrow">Field note</p>
+        <h1>{title}</h1>
+        {description && <p class="note-description">{description}</p>}
+        <NoteMeta updatedAt={updatedAt} />
+      </header>
+      <div class="prose"><slot /></div>
+      <PrevNext previous={previous} next={next} />
+      <Comments enabled={comments} term={title} />
+    </article>
+    <aside aria-label="本页目录"><TableOfContents headings={headings} /></aside>
+  </div>
+</BaseLayout>

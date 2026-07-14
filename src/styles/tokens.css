@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=LXGW+WenKai:wght@400;700&display=swap');
+
+:root {
+  color-scheme: light;
+  --ink: #14283a;
+  --ink-soft: #486072;
+  --paper: #f4f0e5;
+  --paper-deep: #eae4d5;
+  --surface: #faf8f1;
+  --line: #ccd4cf;
+  --accent: #087c76;
+  --accent-deep: #045c59;
+  --accent-wash: #d5ebe5;
+  --moon: #d39b51;
+  --danger: #a44338;
+  --serif: 'Libre Baskerville', 'Songti SC', 'STSong', serif;
+  --body: 'LXGW WenKai', 'Kaiti SC', 'STKaiti', serif;
+  --mono: 'DM Mono', 'SFMono-Regular', monospace;
+  --content-width: 47rem;
+  --sidebar-width: 17.25rem;
+  --toc-width: 14rem;
+  --radius: 0.35rem;
+  --shadow: 0 0.7rem 1.8rem rgba(20, 40, 58, 0.07);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --ink: #e9e5d8;
+  --ink-soft: #b7c2bc;
+  --paper: #102432;
+  --paper-deep: #0b1a25;
+  --surface: #152c3a;
+  --line: #345160;
+  --accent: #55c4b5;
+  --accent-deep: #92ddd2;
+  --accent-wash: #1e4d51;
+  --moon: #e5bb77;
+  --danger: #ef9689;
+  --shadow: 0 0.7rem 1.8rem rgba(0, 0, 0, 0.18);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --ink: #e9e5d8;
+    --ink-soft: #b7c2bc;
+    --paper: #102432;
+    --paper-deep: #0b1a25;
+    --surface: #152c3a;
+    --line: #345160;
+    --accent: #55c4b5;
+    --accent-deep: #92ddd2;
+    --accent-wash: #1e4d51;
+    --moon: #e5bb77;
+    --danger: #ef9689;
+    --shadow: 0 0.7rem 1.8rem rgba(0, 0, 0, 0.18);
+  }
+}
